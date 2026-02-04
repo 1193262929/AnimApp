@@ -4,39 +4,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>REGISTRO USUARIO | ANIMAPP</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="/AnimApp/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/AnimApp/assets/css/01_style.css">
-    <link rel="stylesheet" href="/AnimApp/assets/css/03_registros.css">
+    <title>Registro usuario</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/registro.css">
 </head>
 
-<body class="d-flex flex-column min-vh-100">
-    <header>
+<body>
+    <div class="page-wrapper">
+
         <?php require('../layout/header.php'); ?>
-    </header>
 
-    <main class="flex-fill container">
-        <div class="row justify-content-center">
-            <form action="/AnimApp/models/registroUsuario.php" method="POST" class="form-usuario bg-white w-75 my-5 border border-secondary rounded">
-                <h2 class="my-3 text-center">Crear cuenta usuario</h2>
-                <div class="row">
-                    <div class="form-group col-md-6 text-start mb-2">
-                        <label for="nombre">Nombres</label>
-                        <input type="text" class="form-control" name="nombre" id="nombre" required>
+        <main>
+
+            <div class="container-formulario-registro text-center container-fluid py-2 d-flex justify-content-center">
+
+                <form action="/AnimApp/models/registroUsuario.php" method="POST" class="bg-white w-50 p-3 my-5 d-flex flex-column rounded">
+
+                    <h2 class="my-3">Crear cuenta usuario</h2>
+
+                    <div class="row w-100">
+                        <div class="form-group col-md-6 text-start mb-2">
+                            <label for="nombre">Nombres</label>
+                            <input type="text" class="form-control" name="nombre" id="nombre" required>
+                        </div>
+                        <div class="form-group col-md-6 text-start mb-2">
+                            <label for="apellidos">Apellidos</label>
+                            <input type="text" class="form-control" name="apellido" id="apellidos" required>
+                        </div>
                     </div>
+
                     <div class="form-group col-md-6 text-start mb-2">
-                        <label for="apellidos">Apellidos</label>
-                        <input type="text" class="form-control" name="apellido" id="apellidos" required>
+                        <label for="telefono">Telefono</label>
+                        <input type="tel" class="form-control" name="telefono" id="telefono" required>
                     </div>
-                </div>
 
-                <div class="form-group col-md-5 text-start mb-2">
-                    <label for="telefono">Telefono</label>
-                    <input type="tel" class="form-control" name="telefono" id="telefono" required>
-                </div>
-
-                <div class="row">
+                    <div class="row w-100">
                         <div class="form-group col-md-6 text-start mb-2">
                             <label for="direccion">Direccion</label>
                             <input type="text" class="form-control" name="direccion" id="direccion" required>
@@ -48,7 +52,7 @@
                         </div>
                     </div>
 
-                    <div class="form-group col-md-5 text-start mb-2">
+                    <div class="form-group col-md-6 text-start mb-2">
                         <label for="email">Email</label>
                         <input type="email" class="form-control" name="email" id="email" required>
                     </div>
@@ -77,16 +81,14 @@
                     <div class="container text-center">
                         <button type="submit" class="btn btn-dark w-50 my-3">Crear cuenta</button>                      
                     </div>
+                </form>
 
-            </form>
-        </div>
+            </div>
 
-    </main>
+        </main>
 
-    <footer>
         <?php require('../layout/footer.php'); ?>
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </div>
 </body>
 
 </html>

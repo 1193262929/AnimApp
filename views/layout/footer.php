@@ -1,35 +1,41 @@
-<footer class="bg-dark">
-    <div class="container-fluid text-white">
-        <div class="row d-flex justify-content-center py-5">
-            <div class="col-3 d-flex justify-content-center align-items-center">
-                <ul class="list-unstyled">
-                    <li><a class="enlacesFooter text-decoration-none text-white" href="/AnimApp/index.php">INICIO</a></li>
-                    <li><a class="enlacesFooter text-decoration-none text-white" href="/AnimApp/servicios.php">SERVICIOS</a></li>
-                    <li><a class="enlacesFooter text-decoration-none text-white" href="/AnimApp/adopciones.php">ADOPCIONES</a></li>
-                    <li><a class="enlacesFooter text-decoration-none text-white" href="/AnimApp/apoyanos.php">APOYANOS</a></li>
-                    <li><a class="enlacesFooter text-decoration-none text-white" href="/AnimApp/contacto.php">CONTACTO</a></li>
-                </ul>
-            </div>
-
-            <div class="col-3 d-flex flex-column justify-content-end align-items-center ">
-                <a class="text-decoration-none text-white" href=""><p>Políticas de privacidad</p></a>
-                <a class="text-decoration-none text-white" href=""><p>Terminos y Condiciones</p></a>
-            </div>
-
-            <div class="col-3 d-flex justify-content-center align-items-center">
-                <p>SIGUENOS</p>
-            </div>
-
-            <div class="col-3 d-flex align-items-center">
-                <img class="img-fluid w-25 h-40 rounded-circle" src="/AnimApp/assets/images/Logo_Animapp.jpg" alt="">
-            </div>
-
+<div class="container-fluid text-white bg-dark pt-5">
+    <div class="row p-4">
+        <div class="footer-div col-sm-12 col-md-6 col-lg-3 text-md-center text-sm-center mb-md-3 mb-sm-2">
+            <p class="h-3">ANIMAPP</p>
+            <img class="img-fluid w-25 rounded-circle" src="/AnimApp/assets/images/Logo_Animapp.jpg" alt="">
         </div>
-        <div class="row">
-            <p class="text-center">© 2025 Todos los derechos reservados AnimApp.com</p>
+
+        <div class="footer-div col-sm-12 col-md-6 col-lg-3 text-md-center text-sm-center mb-md-3 mb-sm-2">
+            <ul class="list-unstyled">
+                <li><a class="text-decoration-none text-white" href="/AnimApp/index.php">INICIO</a></li>
+                <li><a class="text-decoration-none text-white" href="/AnimApp/views/home/servicios.php">SERVICIOS</a></li>
+                <li><a class="text-decoration-none text-white" href="/AnimApp/views/home/adopciones.php">ADOPCIONES</a></li>
+                <li><a class="text-decoration-none text-white" href="/AnimApp/views/home/apoyanos.php">APOYANOS</a></li>
+                <li><a class="text-decoration-none text-white" href="/AnimApp/views/home/contacto.php">CONTACTO</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-div col-sm-12 col-md-6 col-lg-3 text-md-center text-sm-center mb-md-3 mb-sm-2 d-flex flex-column justify-content-end">
+            <a class="text-decoration-none text-white" href="">Políticas de privacidad</a><br>
+            <a class="text-decoration-none text-white" href="">Terminos y Condiciones</a>
+        </div>
+
+        <div class="footer-div col-sm-12 col-md-6 col-lg-3 text-md-center text-sm-center mb-md-3 mb-sm-2">
+            <p>REDES SOCIALES</p>
+            <div class="d-flex justify-content-center justify-content-md-start gap-3">
+                <a href="#" aria-label="Facebook">
+                    <img src="/AnimApp/assets/images/facebook.png" class="img-fluid social-icon" alt="Facebook">
+                </a>
+                <a href="#" aria-label="Instagram">
+                    <img src="/AnimApp/assets/images/instagram.png" class="img-fluid social-icon" alt="Instagram">
+                </a>
+                <a href="#" aria-label="Tik-Tok">
+                    <img src="/AnimApp/assets/images/tik-tok.png" class="img-fluid social-icon" alt="WhatsApp">
+                </a>
+            </div>
         </div>
     </div>
-
-
-
-</footer>
+    <div class="row footer-div-copy">
+        <p class="text-center">© 2026 Todos los derechos reservados AnimApp.com</p>
+    </div>
+</div>

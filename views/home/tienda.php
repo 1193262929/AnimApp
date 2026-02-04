@@ -16,7 +16,7 @@
 <body>
   <div class="page-wrapper">
 
-    <?php require('../layout/cabecera.php'); ?>
+    <?php require('../layout/header.php'); ?>
 
     <main>
       <div class="container ">

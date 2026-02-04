@@ -1,0 +1,72 @@
+@import url(./01_style.css);
+
+body {
+  overflow-x: hidden;
+  background-color: var(--color-dark-light);
+}
+
+/* PAGINA LOGIN VISTA */
+.row-loginVista > div:first-child  {
+  border-radius: 5px 0 0 5px;
+}
+
+.row-loginVista > div:last-child  {
+    background-color: white;
+    border-radius: 0 5px 5px 0;
+}
+
+/* PAGINA DE REGISTRARSE */
+.card {
+    width: 18%;
+}
+
+@media (width < 1200px) {
+    .card {
+        width: 30%;
+        margin-bottom: 15px;
+    }
+
+}
+
+@media (width < 767px) {
+  .row-loginVista > div:first-child  {
+    border-radius: 5px 5px 0 0;
+  }
+
+  .row-loginVista > div:last-child {
+    border-radius: 0 0 5px 5px;
+  }
+
+  .card {
+    width: 45%;
+  }
+}
+
+@media (width < 576px) {
+  .container-login {
+    width: 90%;
+    margin: auto;
+  }
+
+  .container-login > div:last-child a {
+    width: 300px;
+  }
+
+  .row-loginVista {
+    display: flex;
+    flex-direction: column; 
+    margin-bottom: 30px;
+  }
+
+  .row-loginVista > div:first-child  {
+    padding-top: 20px;
+  }
+
+  .row-loginVista img {
+    width: 100px;
+  }
+
+  .card {
+    width: 70%;
+  }
+}

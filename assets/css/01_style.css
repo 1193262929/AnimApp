@@ -1,0 +1,209 @@
+:root {
+  /* VERDES */
+  --color-principal: #1b7941;
+  --color-medio: #2ecc71;
+  --color-light: #a3e4b6;
+
+  /* OSCUROS */
+  --color-dark: #0e0e0e;
+  --color-dark-medio: #616161;
+  --color-dark-light: #e0e0e0;
+}
+
+/* ENCABEZADO */
+.social-icon {
+  /* MENU HAMBURGUESA */
+  width: 60%;
+}
+
+/* MAIN - CUERPO DE LA PAGINA DE INICIO */
+/* 1 CONTENEDOR */
+.container-inicio {
+  height: 500px;
+  background: url(/AnimApp/assets/images/imagen-inicio.jpg) center/cover
+    no-repeat;
+}
+
+.inicio-cont-mensaje {
+  background-color: rgba(0, 0, 0, 0.71);
+}
+
+/* CONTENEDOR SERVICIOS */
+.h2-servicios {
+  font-size: 3em;
+  background: linear-gradient(
+    to right,
+    var(--color-dark),
+    var(--color-principal),
+    var(--color-medio),
+    var(--color-dark)
+  );
+  background-clip: text;
+  --webkit-background-clip: text;
+  color: transparent;
+}
+
+.card-servicio {
+  transition: transform 0.2s ease-in-out;
+}
+
+.card-servicio img {
+  height: 250px;
+  object-fit: cover;
+}
+
+.card-servicio:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 10px gray;
+}
+
+/* CONTENEDOR ADOPTAR */
+.container-adoptar {
+  height: 500px !important;
+  background-image: url(/AnimApp/assets/images/adoptarPerros.png);
+  background-position: center 70%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.row-adoptar div{
+    background-color: #1b7941c0;
+    margin-right: 10%;
+}
+
+.row-adoptar div a, .btn-apoyanos{
+    margin: 0 auto;
+}
+
+/* CONTENEDOR APOYANOS */
+.card-img {
+    height: 350px;
+    object-fit: cover;
+}
+
+/* CONTENEDOR CONTACTO */
+.container-contato {
+  height: 500px !important;
+  background-image: url(/AnimApp/assets/images/contacto.jpg);
+  background-position: center 35%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.div-form {
+    background-color: #1b7941c0;
+    margin-left: 10%;
+}
+
+/* FOOTER - PIE DE PAGINA */
+.footer-div-copy {
+  background-color: black;
+}
+
+/*--------------------MODO RESPONSIVE--------------------*/
+
+@media (width < 1400px) {
+  /* ENCABEZADO */
+  .btn-mi-perfil {
+    width: 30%;
+  }
+}
+
+@media (width < 1200px) {
+  /* ENCABEZADO */
+  .div-user {
+    margin-left: 10px;
+  }
+
+  .btn-mi-perfil {
+    width: 40%;
+  }
+}
+
+@media (width < 992px) {
+  /* ENCABEZADO */
+  .social-icon {
+    /* MENU HAMBURGUESA */
+    width: 50%;
+  }
+
+  .div-user {
+    width: 100%;
+    margin-left: 0px;
+  }
+
+  .ul-iniciar-sesion {
+    width: 100% !important;
+  }
+
+  .btn-mi-perfil {
+    width: 50%;
+    margin: 15px 0;
+  }
+}
+
+@media (width < 768px) {
+  /* ENCABEZADO */
+  .social-icon {
+    /* MENU HAMBURGUESA */
+    width: 30%;
+  }
+
+  .inicio-cont-mensaje {
+    width: 90%;
+  }
+  
+.container-apoyanos {
+    width: 100% !important;
+}
+
+  /* FOOTER - PIE DE PAGINA */
+  .footer-div {
+    text-align: center;
+    margin-bottom: 5px;
+  }
+}
+
+@media (width < 576px) {
+  /* ENCABEZADO */
+  .div-user {
+    width: 100%;
+  }
+
+  .btn-cerrarSesion {
+    margin: 10px 0px 0px !important;
+  }
+
+  .btn-iniciar-sesion {
+    margin-bottom: 10px !important;
+  }
+
+  .btn-mi-perfil {
+    width: 60%;
+  }
+
+  .row-card-div {
+    margin-bottom: 15px;
+  }
+
+  .card-servicio {
+    width: 90%;
+    margin: auto;
+  }
+
+  .img-apoyanos {
+    width: 90%;
+    margin: auto;
+    margin-bottom: 10px;
+  }
+
+  .btn-apoyanos {
+    width: 40% !important;
+  }
+
+  .row-adoptar div, .div-form{
+    width: 100%;
+    margin: 0;
+}
+
+}

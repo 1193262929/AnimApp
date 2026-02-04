@@ -17,6 +17,7 @@ try {
     if (!mysqli_real_connect($mysqli, $host, $username, $password, $db_name)) {
         throw new Exception("ERROR " . mysqli_connect_error());
     }
+    // echo "CONEXION";
 
 } catch (Exception $e) {
     echo "Error" . $e->getMessage();

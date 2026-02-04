@@ -10,13 +10,13 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="../../assets/css/style.css">
-    <link rel="stylesheet" href="../../assets/css/refugio.css">
+    <link rel="stylesheet" href="../../assets/css-1/style.css">
+    <link rel="stylesheet" href="../../assets/css-1/refugio.css">
 </head>
 
 <body>
     <div class="page-wrapper container-refugio">
-        <?php require('../layout/cabecera.php'); ?>
+        <?php require('../layout/header.php'); ?>
 
         <main class="row main-refugio pt-5 justify-content-center">
 

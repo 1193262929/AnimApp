@@ -4,29 +4,31 @@
 <html lang="es">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Apoyanos</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="../../assets/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANIMAPP | APOYANOS</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/AnimApp/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/AnimApp/assets/css/01_style.css">
 </head>
 
-<body>
-  <div class="page-wrapper">
+<body class="d-flex flex-column min-vh-100">
 
-    <?php require('../layout/cabecera.php'); ?>
+    <header>
+        <?php require('../layout/header.php'); ?>
+    </header>
 
-    <main>
-      <div class="container py-5">
-        <h1 class="text-center">Ayudanos a ayudar</h1>
-        <p class="text-center">Ayudar te hace feliz.</p>
-      </div>
+    <main class="flex-fill">
+        <div class="container py-5">
+            <h1 class="text-center">Ayudanos a ayudar</h1>
+            <p class="text-center">Ayudar te hace feliz.</p>
+        </div>
     </main>
 
-    <?php require('../layout/footer.php'); ?>
-
-  </div>
+    <footer>
+        <?php require('../layout/footer.php'); ?>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

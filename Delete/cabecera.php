@@ -4,7 +4,6 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 ?>
 
-
 <header>
     <nav class="navbar navbar-expand-lg bg-success">
         <div class="container-fluid p-2">
@@ -19,6 +18,7 @@ if (session_status() === PHP_SESSION_NONE) {
                 <div class="container-lista col-6">
                     <ul class="lista w-100 d-flex justify-content-around list-unstyled mb-0 fw-semibold">
                         <li class="py-1 px-3"><a class="text-decoration-none text-white" href="/AnimApp/index.php">Incicio</a></li>
+                        <li class="py-1 px-3"><a class="text-decoration-none text-white" href="/AnimApp/index1.php">Incicio 1</a></li>
                         <li class="py-1 px-3"><a class="text-decoration-none text-white" href="/AnimApp/views/home/servicios.php">Servicios</a></li>
                         <li class="py-1 px-3"><a class="text-decoration-none text-white" href="/AnimApp/views/home/adopciones.php">Adopciones</a></li>
                         <li class="py-1 px-3"><a class="text-decoration-none text-white" href="/AnimApp/views/home/apoyanos.php">Apoyanos</a></li>
