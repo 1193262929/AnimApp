@@ -1,6 +1,8 @@
 <?php
 require_once("../conexion/conexion.php");
-
+/**
+ * @var mysqli $mysqli
+ */
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Almacenamos los datos en variables, que recibimos desde el formulario
     $nombre = $_POST['nombre'];

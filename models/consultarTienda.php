@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Preparamos la consulta para la ejecucion
         $stmt = mysqli_prepare($mysqli, $query);
         if (!$stmt) {
-            die("ERROR: " . mysqli_error($mysli));
+            die("ERROR: " . mysqli_error($mysqli));
         }
         // Vinculamos las variabels a la consulta 
         mysqli_stmt_bind_param($stmt, "s", $tipoUsuario);
@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if ($resultado && mysqli_num_rows($resultado) > 0) {
             while ($fila = mysqli_fetch_assoc($resultado)) {
-                ?>
+?>
                 <div class="row justify-content-center py-3 bg-info">
                     <div class="col-8">
                         <div class="row border py-3 rounded">
@@ -46,19 +46,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </div>
                     </div>
                 </div>
-                <?php
+            <?php
             }
         } else {
             echo "No se encontraron resultados.";
         }
-        
     } elseif (isset($_POST['paseador'])) {
         $tipoUsuario = $_POST['paseador'];
         $query = "SELECT * FROM paseadores WHERE tipo_usuario = ?";
         // Preparamos la consulta para la ejecucion
         $stmt = mysqli_prepare($mysqli, $query);
         if (!$stmt) {
-            die("ERROR: " . mysqli_error($mysli));
+            die("ERROR: " . mysqli_error($mysqli));
         }
         // Vinculamos las variabels a la consulta 
         mysqli_stmt_bind_param($stmt, "s", $tipoUsuario);
@@ -107,7 +106,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Preparamos la consulta para la ejecucion
         $stmt = mysqli_prepare($mysqli, $query);
         if (!$stmt) {
-            die("ERROR: " . mysqli_error($mysli));
+            die("ERROR: " . mysqli_error($mysqli));
         }
         // Vinculamos las variabels a la consulta 
         mysqli_stmt_bind_param($stmt, "s", $tipoUsuario);
