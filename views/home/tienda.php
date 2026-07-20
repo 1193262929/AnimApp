@@ -17,22 +17,21 @@
   <div class="page-wrapper">
 
     <?php require('../layout/header.php'); ?>
-
     <main>
       <div class="container ">
         <div class="row mt-5">
           <div class="carousel slide " id="mi-carousel" data-bs-ride="carousel">
-              <div class="carousel-inner">
-                <div class="carousel-item active container-carousel">
-                  <img src="/assets/images/inicioRecortada.png" alt="" class="img-fluid">
-                </div>
-                <div class="carousel-item">
-                  <img src="/assets/images/imagen-inicio.jpg" alt="" class="img-fluid">
-                </div>
-                <div class="carousel-item">
-                  <img src="/assets/images/imagen-inicio.jpg" alt="" class="img-fluid">
-                </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active container-carousel">
+                <img src="/assets/images/inicioRecortada.png" alt="" class="img-fluid">
               </div>
+              <div class="carousel-item">
+                <img src="/assets/images/imagen-inicio.jpg" alt="" class="img-fluid">
+              </div>
+              <div class="carousel-item">
+                <img src="/assets/images/imagen-inicio.jpg" alt="" class="img-fluid">
+              </div>
+            </div>
           </div>
 
         </div>

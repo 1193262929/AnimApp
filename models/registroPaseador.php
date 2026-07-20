@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/../conexion/conexion.php';
+require_once __DIR__ . '/../helpers/database.php';
 /**
  * @var mysqli $mysqli
  */
@@ -12,23 +13,13 @@ try {
         $descripcion = trim($_POST['descripcion'] ?? '');
         $email = trim($_POST['email'] ?? '');
         $password = trim($_POST['contrasena'] ?? '');
-        // Consulta para registrar un nuevo paseador
         $query = "INSERT INTO paseadores (nombre, telefono, ciudad, zona_trabajo, descripcion, email, contraseña) VALUES (?, ?, ?, ?, ?, ?, ?);";
-        // Preparamos la consulta para la ejecucion
-        $stmt = $mysqli->prepare($query);
-        if (!$stmt) {
-            throw new Exception('Error al preparar la consulta: ' . mysqli_error($mysqli));
-        }
-        // Vinculamos las variables a la consulta 
-        $stmt->bind_param('sssssss', $nombre, $telefono, $ciudad, $zonaTrabajo, $descripcion, $email, $password);
-        // Ejecutamos la consulta preparada
-        if (!$stmt->execute()) {
-            throw new Exception('Error al ejecutar la consulta: ' . $stmt->error);
-        }
+        $datosUsuario = [$nombre, $telefono, $ciudad, $zonaTrabajo, $descripcion, $email, $password];
+        $stmt = ejecutarConsulta($mysqli, $query, 'sssssss', $datosUsuario);
         echo "<script>
-             alert('Se registro el paseador exitosamente');
-             window.location.href = '/'; 
-           </script>";
+                alert('Se registro el paseador exitosamente');
+                window.location.href = '/'; 
+            </script>";
     }
 } catch (Exception $e) {
     echo 'Error: ' . $e->getMessage();

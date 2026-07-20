@@ -35,7 +35,7 @@
                 <div class="row">
                     <div class="col text-center">
                         <!-- <button class="btn btn-outline-success w-50">Publicar Mascotas</button> -->
-                        <a class="btn btn-outline-success w-50" href="/models/registrarMascota.php">Publicar Mascotas</a>
+                        <a class="btn btn-outline-success w-50" href="/views/login/registrarMascota.php">Publicar Mascotas</a>
                     </div>
                     <div class="col text-center">
                         <button class="btn btn-outline-success w-50">Registra Evento</button>

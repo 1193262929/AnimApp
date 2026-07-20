@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/../conexion/conexion.php';
+require_once __DIR__ . '/../helpers/database.php';
 /**
  * @var mysqli $mysqli
  */
@@ -14,17 +15,8 @@ try {
         $password = trim($_POST['contrasena'] ?? '');
         // Consulta para registrar un nuevo refugio
         $query = "INSERT INTO refugios (nombre, telefono, direccion,  ciudad, descripcion, email, contraseña) VALUES (?, ?, ?, ?, ?, ?, ?);";
-        // Preparamos la consulta para la ejecucion
-        $stmt = $mysqli->prepare($query);
-        if (!$stmt) {
-            throw new Exception('Error al preparar la consulta: ' . mysqli_error($mysqli));
-        }
-        // Vinculamos las variables a la consulta 
-        $stmt->bind_param('sssssss', $nombre, $telefono, $direccion, $ciudad, $descripcion, $email, $password);
-        // Ejecutamos la consulta preparada
-        if (!$stmt->execute()) {
-            throw new Exception('Error al ejecutar la consulta: ' . $stmt->error);
-        }
+        $datosUsuario = [$nombre, $telefono, $direccion, $ciudad, $descripcion, $email, $password];
+        $stmt = ejecutarConsulta($mysqli, $query, 'sssssss', $datosUsuario);
         echo "<script>
              alert('Se registro el refugio correctamente');
              window.location.href = '/'; 

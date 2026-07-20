@@ -25,33 +25,34 @@ if (session_status() === PHP_SESSION_NONE) {
             </ul>
 
             <!-- Botones de Iniciar y Registrarse -->
-            <?php if (isset($_SESSION['usuario']) && $_SESSION['tipo_usuario'] == "normal"): ?>
+            <?php if (isset($_SESSION['usuario']) && $_SESSION['usuario']['tipo'] === "normal"): ?>
                 <div class="div-user col-6 col-lg-5 d-sm-block d-lg-flex align-items-center justify-content-around gap-2">
-                    <p class="h-auto mb-0 fw-bold"><i class="bi bi-person-circle"></i> <?php echo $_SESSION['usuario']; ?></p>
-                    <a class="btn btn-dark ms-3 ms-sm-0 ms-md-0 mt-sm-2 btn-cerrarSesion" href="/controller/logout.php">Cerrar sesión</a>
+                    <p class="h-auto mb-0 fw-bold"><i class="bi bi-person-circle"></i> <?php echo $_SESSION['usuario']['email']; ?></p>
+                    <a class="btn btn-outline-dark " href="/views/login/registrarMascota.php">Publicar Mascota</a>
+                    <a class="btn btn-dark btn-cerrarSesion" href="/controller/logout.php">Cerrar sesión</a>
                 </div>
 
-            <?php elseif (isset($_SESSION['usuario']) && $_SESSION['tipo_usuario'] == "refugio"): ?>
+            <?php elseif (isset($_SESSION['usuario']) && $_SESSION['usuario']['tipo'] === "refugio"): ?>
                 <div class="div-user col-6 col-lg-5 d-lg-block d-xl-flex align-items-center justify-content-around gap-2">
-                    <p class="h-auto mb-0 fw-bold">Refugio <i class="bi bi-house-door-fill"></i> <?php echo $_SESSION['usuario']; ?></p>
+                    <p class="h-auto mb-0 fw-bold">Refugio <i class="bi bi-house-door-fill"></i> <?php echo $_SESSION['usuario']['email']; ?></p>
                     <a class="btn btn-dark btn-mi-perfil" href="/views/home/refugio.php">Mi Perfil</a>
                 </div>
 
-            <?php elseif (isset($_SESSION['usuario']) && $_SESSION['tipo_usuario'] == "tienda"): ?>
+            <?php elseif (isset($_SESSION['usuario']) && $_SESSION['usuario']['tipo'] === "tienda"): ?>
                 <div class="div-user col-6 col-lg-5 d-lg-block d-lg-flex align-items-center justify-content-center gap-2">
-                    <p class="h-auto mb-0 fw-bold">Tienda <i class="bi bi-house-door-fill"></i> <?php echo $_SESSION['usuario']; ?></p>
+                    <p class="h-auto mb-0 fw-bold">Tienda <i class="bi bi-house-door-fill"></i> <?php echo $_SESSION['usuario']['email']; ?></p>
                     <a class="btn btn-dark w-25 btn-mi-perfil" href="/views/home/tienda.php">Mi Perfil</a>
                 </div>
 
-            <?php elseif (isset($_SESSION['usuario']) && $_SESSION['tipo_usuario'] == "paseador"): ?>
+            <?php elseif (isset($_SESSION['usuario']) && $_SESSION['usuario']['tipo'] === "paseador"): ?>
                 <div class="div-user col-6 col-lg-5 d-sm-block d-lg-flex align-items-center justify-content-around gap-2">
-                    <p class="h-auto mb-0 fw-bold">Paseador <i class="bi bi-person-square"> </i><?php echo $_SESSION['usuario']; ?></p>
+                    <p class="h-auto mb-0 fw-bold">Paseador <i class="bi bi-person-square"> </i><?php echo $_SESSION['usuario']['email']; ?></p>
                     <a class="btn btn-dark btn-mi-perfil" href="/views/home/paseador.php">Mi Perfil</a>
                 </div>
 
-            <?php elseif (isset($_SESSION['usuario']) && $_SESSION['tipo_usuario'] == "veterinaria"): ?>
+            <?php elseif (isset($_SESSION['usuario']) && $_SESSION['usuario']['tipo'] === "veterinaria"): ?>
                 <div class="div-user col-6 col-lg-5 col-xl-6 d-lg-block d-xl-flex align-items-center justify-content-around gap-2">
-                    <p class="h-auto mb-0 fw-bold">Veterinaria <i class="bi bi-house-door-fill"></i> <?php echo $_SESSION['usuario']; ?></p>
+                    <p class="h-auto mb-0 fw-bold">Veterinaria <i class="bi bi-house-door-fill"></i> <?php echo $_SESSION['usuario']['email']; ?></p>
                     <a class="btn btn-dark btn-mi-perfil" href="/views/home/veterinaria.php">Mi Perfil</a>
                 </div>
             <?php else: ?>

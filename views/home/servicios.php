@@ -1,5 +1,5 @@
-<?php 
-include("../../controller/verificarSesion.php"); 
+<?php
+include("../../controller/verificarSesion.php");
 ?>
 
 <!DOCTYPE html>
@@ -30,15 +30,44 @@ include("../../controller/verificarSesion.php");
                 <div class="col-6 d-flex align-items-center">
                     <h2 class="h1">¿QUE SERVICIO CONSULTAR?</h2>
                 </div>
-                <div class="col-2 d-flex align-items-end justify-content-end">
-                    <a class="btn btn-info " href="">PUBLICAR MI SERVICIO</a>
-                </div>
             </div>
 
-            <div class="row flex-column align-items-center my-3">
+            <div class="row">
+                <form class="row flex-column align-items-center my-3" action="/models/consultarServicios.php" method="post">
+
+                    <div class="col-4 d-flex justify-content-between align-items-center py-2 border mb-2 rounded">
+                        <img src="/assets/images/tiendaAnimales.png" alt="Logo de la tienda" class="img-fluid w-25">
+                        <div class="form-check bg-white">
+                            <input type="checkbox" name="servicios[]" value="tiendas" class="form-check-input">
+                            <label for="terminos" class="form-check-label">Tiendas</label>
+                        </div>
+                        <input type="submit" class="btn btn-outline-dark" value="CONSULTAR">
+                    </div>
+
+                    <div class="col-4 d-flex justify-content-between align-items-center py-2 border mb-2 rounded">
+                        <img src="/assets/images/paseadorPerro.png" alt="Logo del paseador" class="img-fluid w-25 mx-2">
+                        <div class="form-check">
+                            <input type="checkbox" name="servicios[]" value="paseador" class="form-check-input">
+                            <label for="terminos" class="form-check-label">Paseadores</label>
+                        </div>
+                        <input type="submit" class="btn btn-outline-dark " value="CONSULTAR">
+                    </div>
+
+                    <div class="col-4 d-flex justify-content-between align-items-center py-2 border mb-2 rounded">
+                        <img src="/assets/images/veterinario.png" alt="Logo de la veterinaria" class="img-fluid w-25 ">
+                        <div class="form-chec">
+                            <input type="checkbox" name="servicios[]" value="veterinaria" class="form-check-input">
+                            <label for="terminos" class="form-check-label">Veterinarias</label>
+                        </div>
+                        <input type="submit" class="btn btn-outline-dark" value="CONSULTAR">
+                    </div>
+
+                </form>
+            </div>
+            <!-- <div class="row flex-column align-items-center my-3">
                 <div class="col-4 d-flex py-2 border mb-2 rounded">
                     <img src="/assets/images/tiendaAnimales.png" alt="Logo de la tienda" class="img-fluid w-25 mx-4">
-                    <form action="/models/consultarTienda.php" method="POST" class="text-center py-3 w-100">
+                    <form action="/models/consultarServicios.php" method="POST" class="text-center py-3 w-100">
                         <div class="form-check mb-3">
                             <input type="checkbox" name="tienda" value="tienda" class="form-check-input">
                             <label for="terminos" class="form-check-label">Tiendas</label>
@@ -48,7 +77,7 @@ include("../../controller/verificarSesion.php");
                 </div>
                 <div class="col-4 d-flex py-2 border mb-2 rounded">
                     <img src="/assets/images/paseadorPerro.png" alt="Logo del paseador" class="img-fluid w-25 mx-4">
-                    <form action="/models/consultarTienda.php" method="POST" class="text-center py-3 w-100">
+                    <form action="/models/consultarServicios.php" method="POST" class="text-center py-3 w-100">
                         <div class="form-check mb-3">
                             <input type="checkbox" name="paseador" value="paseador" class="form-check-input">
                             <label for="terminos" class="form-check-label">Paseadores</label>
@@ -58,7 +87,7 @@ include("../../controller/verificarSesion.php");
                 </div>
                 <div class="col-4 d-flex py-2 border rounded">
                     <img src="/assets/images/veterinario.png" alt="Logo de la veterinaria" class="img-fluid w-25 mx-4">
-                    <form action="/models/consultarTienda.php" method="POST" class="text-center py-3 w-100">
+                    <form action="/models/consultarServicios.php" method="POST" class="text-center py-3 w-100">
                         <div class="form-check mb-3">
                             <input type="checkbox" name="veterinaria" value="veterinaria" class="form-check-input">
                             <label for="terminos" class="form-check-label">Veterinarias</label>
@@ -66,10 +95,10 @@ include("../../controller/verificarSesion.php");
                         <input type="submit" class="btn btn-outline-dark w-75" value="CONSULTAR">
                     </form>
                 </div>
-            </div>
+            </div> -->
 
             <div class="row">
-                
+
                 <?php include("../../models/consultarTienda.php"); ?>
             </div>
 
@@ -106,7 +135,7 @@ include("../../controller/verificarSesion.php");
     <footer>
         <?php require('../layout/footer.php'); ?>
     </footer>
-    
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 

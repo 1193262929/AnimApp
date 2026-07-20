@@ -15,7 +15,7 @@
     <header>
         <?php require('./views/layout/header.php'); ?>
     </header>
-
+    
     <main class="main flex-fill">
         <!-- Container Imagen principal -->
         <div class="container-fluid container-inicio">
@@ -154,4 +154,5 @@
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

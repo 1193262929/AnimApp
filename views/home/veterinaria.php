@@ -16,7 +16,7 @@
   <div class="page-wrapper">
 
     <?php require('../layout/header.php'); ?>
-
+    
     <main>
       <div class="container py-5">
         <h1 class="text-center">Veterinaria</h1>
