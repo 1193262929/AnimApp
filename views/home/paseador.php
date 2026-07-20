@@ -24,7 +24,7 @@
     </main>
 
     <div class="container text-end mb-4">
-      <a class="btn btn-dark ms-3" href="/AnimApp/controller/logout.php">Cerrar sesión</a>
+      <a class="btn btn-dark ms-3" href="/controller/logout.php">Cerrar sesión</a>
     </div>
   </div>
 </body>

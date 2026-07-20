@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>REGISTRO PASEADOR | ANIMAPP</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="/AnimApp/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/AnimApp/assets/css/01_style.css">
-    <link rel="stylesheet" href="/AnimApp/assets/css/03_registros.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/01_style.css">
+    <link rel="stylesheet" href="/assets/css/03_registros.css">
 </head>
 
 <body class="d-flex flex-column min-vh-100">
@@ -20,7 +20,7 @@
 
     <main class="flex-fill container">
         <div class="row justify-content-center">
-            <form action="/AnimApp/models/registroPaseador.php" method="POST" class="form-usuario bg-white w-75 my-5 border border-secondary rounded">
+            <form action="../../models/registroPaseador.php" method="POST" class="form-usuario bg-white w-75 my-5 border border-secondary rounded">
                 <h2 class="my-3 text-center">Crear cuenta paseador</h2>
                 <div class="row">
                     <div class="form-group col-md-6 text-start mb-2">
@@ -35,19 +35,19 @@
 
                 <div class="row">
                     <div class="form-group col-md-6 text-start mb-2">
-                        <label for="direccion">Ciudad</label>
-                        <input type="text" class="form-control" name="direccion" id="direccion" required>
+                        <label for="ciudad">Ciudad</label>
+                        <input type="text" class="form-control" name="ciudad" id="ciudad" required>
                     </div>
 
                     <div class="form-group col-md-6 text-start mb-2">
-                        <label for="direccion">Zona de trabajo</label>
-                        <input type="text" class="form-control" name="ciudad" id="ciudad" required>
+                        <label for="zonaTrabajo">Zona de trabajo</label>
+                        <input type="text" class="form-control" name="zonaTrabajo" id="zonaTrabajo" required>
                     </div>
                 </div>
 
                 <div class="form-group text-start mb-2">
-                    <label for="comment">Descripción:</label>
-                    <textarea class="form-control" name="comment" id="comment" rows="2"></textarea>
+                    <label for="descripcion">Descripción:</label>
+                    <textarea class="form-control" name="descripcion" id="descripcion" rows="2"></textarea>
                 </div>
 
                 <div class="form-group col-md-5 text-start mb-2">

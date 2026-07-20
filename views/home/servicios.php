@@ -10,9 +10,9 @@ include("../../controller/verificarSesion.php");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ANIMAPP | SERVICIOS</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="/AnimApp/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/AnimApp/assets/css/01_style.css">
-    <link rel="stylesheet" href="/AnimApp/assets/css/03_registros.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/01_style.css">
+    <link rel="stylesheet" href="/assets/css/03_registros.css">
 </head>
 
 <body class="d-flex flex-column min-vh-100">
@@ -25,7 +25,7 @@ include("../../controller/verificarSesion.php");
         <div class="container py-5">
             <div class="row">
                 <div class="col-4">
-                    <img class="img-fluid rounded-circle w-50" src="/AnimApp/assets/images/servicios-1.jpg" alt="">
+                    <img class="img-fluid rounded-circle w-50" src="/assets/images/servicios-1.jpg" alt="">
                 </div>
                 <div class="col-6 d-flex align-items-center">
                     <h2 class="h1">¿QUE SERVICIO CONSULTAR?</h2>
@@ -37,8 +37,8 @@ include("../../controller/verificarSesion.php");
 
             <div class="row flex-column align-items-center my-3">
                 <div class="col-4 d-flex py-2 border mb-2 rounded">
-                    <img src="/AnimApp/assets/images/tiendaAnimales.png" alt="Logo de la tienda" class="img-fluid w-25 mx-4">
-                    <form action="/AnimApp/models/consultarTienda.php" method="POST" class="text-center py-3 w-100">
+                    <img src="/assets/images/tiendaAnimales.png" alt="Logo de la tienda" class="img-fluid w-25 mx-4">
+                    <form action="/models/consultarTienda.php" method="POST" class="text-center py-3 w-100">
                         <div class="form-check mb-3">
                             <input type="checkbox" name="tienda" value="tienda" class="form-check-input">
                             <label for="terminos" class="form-check-label">Tiendas</label>
@@ -47,8 +47,8 @@ include("../../controller/verificarSesion.php");
                     </form>
                 </div>
                 <div class="col-4 d-flex py-2 border mb-2 rounded">
-                    <img src="/AnimApp/assets/images/paseadorPerro.png" alt="Logo del paseador" class="img-fluid w-25 mx-4">
-                    <form action="/AnimApp/models/consultarTienda.php" method="POST" class="text-center py-3 w-100">
+                    <img src="/assets/images/paseadorPerro.png" alt="Logo del paseador" class="img-fluid w-25 mx-4">
+                    <form action="/models/consultarTienda.php" method="POST" class="text-center py-3 w-100">
                         <div class="form-check mb-3">
                             <input type="checkbox" name="paseador" value="paseador" class="form-check-input">
                             <label for="terminos" class="form-check-label">Paseadores</label>
@@ -57,8 +57,8 @@ include("../../controller/verificarSesion.php");
                     </form>
                 </div>
                 <div class="col-4 d-flex py-2 border rounded">
-                    <img src="/AnimApp/assets/images/veterinario.png" alt="Logo de la veterinaria" class="img-fluid w-25 mx-4">
-                    <form action="/AnimApp/models/consultarTienda.php" method="POST" class="text-center py-3 w-100">
+                    <img src="/assets/images/veterinario.png" alt="Logo de la veterinaria" class="img-fluid w-25 mx-4">
+                    <form action="/models/consultarTienda.php" method="POST" class="text-center py-3 w-100">
                         <div class="form-check mb-3">
                             <input type="checkbox" name="veterinaria" value="veterinaria" class="form-check-input">
                             <label for="terminos" class="form-check-label">Veterinarias</label>

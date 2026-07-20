@@ -2,16 +2,16 @@
     <div class="row p-4">
         <div class="footer-div col-sm-12 col-md-6 col-lg-3 text-md-center text-sm-center mb-md-3 mb-sm-2">
             <p class="h-3">ANIMAPP</p>
-            <img class="img-fluid w-25 rounded-circle" src="/AnimApp/assets/images/Logo_Animapp.jpg" alt="">
+            <img class="img-fluid w-25 rounded-circle" src="/assets/images/Logo_Animapp.jpg" alt="">
         </div>
 
         <div class="footer-div col-sm-12 col-md-6 col-lg-3 text-md-center text-sm-center mb-md-3 mb-sm-2">
             <ul class="list-unstyled">
-                <li><a class="text-decoration-none text-white" href="/AnimApp/index.php">INICIO</a></li>
-                <li><a class="text-decoration-none text-white" href="/AnimApp/views/home/servicios.php">SERVICIOS</a></li>
-                <li><a class="text-decoration-none text-white" href="/AnimApp/views/home/adopciones.php">ADOPCIONES</a></li>
-                <li><a class="text-decoration-none text-white" href="/AnimApp/views/home/apoyanos.php">APOYANOS</a></li>
-                <li><a class="text-decoration-none text-white" href="/AnimApp/views/home/contacto.php">CONTACTO</a></li>
+                <li><a class="text-decoration-none text-white" href="/index.php">INICIO</a></li>
+                <li><a class="text-decoration-none text-white" href="/views/home/servicios.php">SERVICIOS</a></li>
+                <li><a class="text-decoration-none text-white" href="/views/home/adopciones.php">ADOPCIONES</a></li>
+                <li><a class="text-decoration-none text-white" href="/views/home/apoyanos.php">APOYANOS</a></li>
+                <li><a class="text-decoration-none text-white" href="/views/home/contacto.php">CONTACTO</a></li>
             </ul>
         </div>
 
@@ -24,13 +24,13 @@
             <p>REDES SOCIALES</p>
             <div class="d-flex justify-content-center justify-content-md-start gap-3">
                 <a href="#" aria-label="Facebook">
-                    <img src="/AnimApp/assets/images/facebook.png" class="img-fluid social-icon" alt="Facebook">
+                    <img src="/assets/images/facebook.png" class="img-fluid social-icon" alt="Facebook">
                 </a>
                 <a href="#" aria-label="Instagram">
-                    <img src="/AnimApp/assets/images/instagram.png" class="img-fluid social-icon" alt="Instagram">
+                    <img src="/assets/images/instagram.png" class="img-fluid social-icon" alt="Instagram">
                 </a>
                 <a href="#" aria-label="Tik-Tok">
-                    <img src="/AnimApp/assets/images/tik-tok.png" class="img-fluid social-icon" alt="WhatsApp">
+                    <img src="/assets/images/tik-tok.png" class="img-fluid social-icon" alt="WhatsApp">
                 </a>
             </div>
         </div>

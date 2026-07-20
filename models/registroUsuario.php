@@ -1,38 +1,41 @@
 <?php
-require_once("../conexion/conexion.php");
+require_once __DIR__ . '/../conexion/conexion.php';
 /**
  * @var mysqli $mysqli
  */
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Almacenamos los datos en variables, que recibimos desde el formulario
-    $nombre = $_POST['nombre'];
-    $apellido = $_POST['apellido'];
-    $telefono = $_POST['telefono'];
-    $direccion = $_POST['direccion'];
-    $ciudad = $_POST['ciudad'];
-    $email = $_POST['email'];
-    $password = $_POST['contrasena'];
-    $password2 = $_POST['contrasena2'];
-
-    // Consulta en este caso para insertar los datos que recibimos desde el fomulario
-    $query = "INSERT INTO usuarios_normales (nombre, apellido, email, direccion, telefono, ciudad, contraseña, verificarContraseña) VALUES (?, ?, ?, ?, ?, ?, ?, ?);";
-
-    // Preparamos la consulta para la ejecucion
-    $stmt = mysqli_prepare($mysqli, $query);
-
-    // Vinculamos las variabels a la consulta 
-    mysqli_stmt_bind_param($stmt, "ssssisss", $nombre, $apellido, $email,  $direccion, $telefono, $ciudad,  $password, $password2);
-
-    // Ejecutamos la consulta preparada
-    if (mysqli_stmt_execute($stmt)) {
+try {
+    if ($_SERVER["REQUEST_METHOD"] === 'POST') {
+        // Obtenemos los datos enviados desde el formulario
+        $nombre = trim($_POST['nombre'] ?? '');
+        $apellido = trim($_POST['apellido'] ?? '');
+        $telefono = trim($_POST['telefono'] ?? '');
+        $direccion = trim($_POST['direccion'] ?? '');
+        $ciudad = trim($_POST['ciudad'] ?? '');
+        $email = trim($_POST['email'] ?? '');
+        $password = trim($_POST['contrasena'] ?? '');
+        // Consulta para insertar uno nuevo usuario 
+        $query = "INSERT INTO usuarios_normales (nombre, apellido, email, direccion, telefono, ciudad, contraseña) VALUES (?, ?, ?, ?, ?, ?, ?);";
+        // Preparamos la consulta para la ejecucion
+        $stmt = $mysqli->prepare($query);
+        if (!$stmt) {
+            throw new Exception('Error al preparar la consulta: ' . mysqli_error($mysqli));
+        }
+        // Vinculamos las variables a la consulta 
+        $stmt->bind_param('sssssss', $nombre, $apellido, $email, $direccion, $telefono, $ciudad, $password);
+        // Ejecutamos la consulta 
+        if (!$stmt->execute()) {
+            throw new Exception('Error al ejecutar la consulta: ' . $stmt->error);
+        }
         echo "<script>
-             alert('Registro exitoso');
-             window.location.href = 'http://localhost/AnimApp/'; 
+             alert('Registro de usuario exitoso');
+             window.location.href = '/'; 
            </script>";
-    } else {
-        echo "Error en el registro" . mysqli_error($mysqli);
     }
-    mysqli_stmt_close($stmt); // Terminamos la consulta preparada
-    mysqli_close($mysqli); // Cerramos la conexion
-
+} catch (Exception $e) {
+    echo 'Error: ' . $e->getMessage();
+} finally {
+    if (isset($stmt)) {
+        $stmt->close();
+    }
+    $mysqli->close();
 }

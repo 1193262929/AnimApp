@@ -24,13 +24,13 @@
           <div class="carousel slide " id="mi-carousel" data-bs-ride="carousel">
               <div class="carousel-inner">
                 <div class="carousel-item active container-carousel">
-                  <img src="/AnimApp/assets/images/inicioRecortada.png" alt="" class="img-fluid">
+                  <img src="/assets/images/inicioRecortada.png" alt="" class="img-fluid">
                 </div>
                 <div class="carousel-item">
-                  <img src="/AnimApp/assets/images/imagen-inicio.jpg" alt="" class="img-fluid">
+                  <img src="/assets/images/imagen-inicio.jpg" alt="" class="img-fluid">
                 </div>
                 <div class="carousel-item">
-                  <img src="/AnimApp/assets/images/imagen-inicio.jpg" alt="" class="img-fluid">
+                  <img src="/assets/images/imagen-inicio.jpg" alt="" class="img-fluid">
                 </div>
               </div>
           </div>
@@ -40,7 +40,7 @@
     </main>
 
     <div class="container text-end mb-4">
-      <a class="btn btn-dark ms-3" href="/AnimApp/controller/logout.php">Cerrar sesión</a>
+      <a class="btn btn-dark ms-3" href="/controller/logout.php">Cerrar sesión</a>
     </div>
 
   </div>

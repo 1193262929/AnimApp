@@ -8,8 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ANIMAPP | ADOPCIONES</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="/AnimApp/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/AnimApp/assets/css/01_style.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/01_style.css">
 </head>
 
 <body class="d-flex flex-column min-vh-100">

@@ -20,7 +20,7 @@
 /* 1 CONTENEDOR */
 .container-inicio {
   height: 500px;
-  background: url(/AnimApp/assets/images/imagen-inicio.jpg) center/cover
+  background: url(/assets/images/imagen-inicio.jpg) center/cover
     no-repeat;
 }
 
@@ -60,7 +60,7 @@
 /* CONTENEDOR ADOPTAR */
 .container-adoptar {
   height: 500px !important;
-  background-image: url(/AnimApp/assets/images/adoptarPerros.png);
+  background-image: url(/assets/images/adoptarPerros.png);
   background-position: center 70%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -84,7 +84,7 @@
 /* CONTENEDOR CONTACTO */
 .container-contato {
   height: 500px !important;
-  background-image: url(/AnimApp/assets/images/contacto.jpg);
+  background-image: url(/assets/images/contacto.jpg);
   background-position: center 35%;
   background-repeat: no-repeat;
   background-size: cover;

@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>REGISTRO REFUGIO | ANIMAPP</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="/AnimApp/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/AnimApp/assets/css/01_style.css">
-    <link rel="stylesheet" href="/AnimApp/assets/css/03_registros.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/01_style.css">
+    <link rel="stylesheet" href="/assets/css/03_registros.css">
 </head>
 
 <body class="d-flex flex-column min-vh-100">
@@ -17,10 +17,9 @@
     </header>
 
     <!-- A este formulario se le debe agregar un campo para almacenar una foto -->
-
     <main class="flex-fill container">
         <div class="row justify-content-center">
-            <form action="/AnimApp/models/registroRefugio.php" method="POST" class="form-usuario bg-white w-75 my-5 border border-secondary rounded">
+            <form action="../../models/registroRefugio.php" method="POST" class="form-usuario bg-white w-75 my-5 border border-secondary rounded">
                 <h2 class="my-3 text-center">Crear cuenta refugio</h2>
                 <div class="row">
                     <div class="form-group col-md-6 text-start mb-2">
@@ -46,8 +45,8 @@
                 </div>
 
                 <div class="form-group text-start mb-2">
-                    <label for="comment">Descripción:</label>
-                    <textarea class="form-control" name="comment" id="comment" rows="2"></textarea>
+                    <label for="descripcion">Descripción:</label>
+                    <textarea class="form-control" name="descripcion" id="descripcion" rows="2"></textarea>
                 </div>
 
                 <div class="form-group col-md-5 text-start mb-2">

@@ -2,6 +2,6 @@
 session_start();
 session_unset(); // Elimina las variables de sesion
 session_destroy(); // Destruye la sesion
-header("Location: /AnimApp/index.php");
+header("Location: /index.php");
 exit();
 ?>

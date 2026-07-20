@@ -33,45 +33,45 @@
             <div class="row ">
                 <div class="col-xl-3 col-lg-4 col-md-6 mb-sm-4 row-card-div">
                     <div class="card card-servicio h-100">
-                        <img class="card-img-top" src="/AnimApp/assets/images/perroComida.jpg" alt="">
+                        <img class="card-img-top" src="/assets/images/perroComida.jpg" alt="">
                         <div class="card-body d-flex flex-column">
                             <h4 class="card-title">TIENDAS</h4>
                             <h5 class="card-subtitle text-muted mb-2">Subtitulo</h5>
                             <p class="card-text">Encuentra todo lo que necesita tu mascota.</p>
-                            <a href="/AnimApp/views/home/servicios.php" class="btn btn-outline-success mt-auto">Más información</a>
+                            <a href="/views/home/servicios.php" class="btn btn-outline-success mt-auto">Más información</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-xl-3 col-lg-4 col-md-6 mb-sm-4 row-card-div">
                     <div class="card card-servicio h-100">
-                        <img class="card-img-top" src="/AnimApp/assets/images/paseador.jpg" alt="">
+                        <img class="card-img-top" src="/assets/images/paseador.jpg" alt="">
                         <div class="card-body d-flex flex-column">
                             <h4 class="card-title">PASEADORES</h4>
                             <h5 class="card-subtitle text-muted mb-2">Subtitulo</h5>
                             <p class="card-text">Contacta con la mejor la comunidad de paseadores.</p>
-                            <a href="/AnimApp/views/home/servicios.php" class="btn btn-outline-success mt-auto">Más información</a>
+                            <a href="/views/home/servicios.php" class="btn btn-outline-success mt-auto">Más información</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-xl-3 col-lg-4 col-md-6 mb-sm-4 row-card-div">
                     <div class="card card-servicio h-100">
-                        <img class="card-img-top" src="/AnimApp/assets/images/veterinaria1.jpg" alt="">
+                        <img class="card-img-top" src="/assets/images/veterinaria1.jpg" alt="">
                         <div class="card-body d-flex flex-column">
                             <h4 class="card-title">VETERINARIAS</h4>
                             <h5 class="card-subtitle text-muted mb-2">Subtitulo</h5>
                             <p class="card-text">Nuestros mejores servicios en veterinarias</p>
-                            <a href="/AnimApp/views/home/servicios.php" class="btn btn-outline-success mt-auto">Más información</a>
+                            <a href="/views/home/servicios.php" class="btn btn-outline-success mt-auto">Más información</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-xl-3 col-lg-4 col-md-6 mb-sm-4 row-card-div">
                     <div class="card card-servicio h-100">
-                        <img class="card-img-top" src="/AnimApp/assets/images/perroComida.jpg" alt="">
+                        <img class="card-img-top" src="/assets/images/perroComida.jpg" alt="">
                         <div class="card-body d-flex flex-column">
                             <h4 class="card-title">REFUGIO</h4>
                             <h5 class="card-subtitle text-muted mb-2">Subtitulo</h5>
                             <p class="card-text">Encuentra todo lo que necesita tu mascota.</p>
-                            <a href="/AnimApp/views/home/servicios.php" class="btn btn-outline-success mt-auto">Más información</a>
+                            <a href="/views/home/servicios.php" class="btn btn-outline-success mt-auto">Más información</a>
                         </div>
                     </div>
                 </div>
@@ -84,7 +84,7 @@
                 <div class="col-xl-5 col-lg-6 col-md-8 col-sm-10 text-white text-center h-100 d-flex flex-column justify-content-center">
                     <h3 class="fw-bold fs-2">Adopta amor, cambia dos vidas</h3>
                     <p class="py-4">Cada mascota merece un hogar lleno de cariño. En animapp puedes encontrar a tu compañero ideal y darle una segunda oportunidad. Explora perfiles, conoce sus historias y da el primer paso hacia una vida compartida.</p>
-                    <a class="btn-adoptar btn btn-dark w-50" href="/AnimApp/views/home/adopciones.php">Más Información <i class="bi bi-hand-thumbs-up"></i></a>
+                    <a class="btn-adoptar btn btn-dark w-50" href="/views/home/adopciones.php">Más Información <i class="bi bi-hand-thumbs-up"></i></a>
                 </div>
             </div>
         </div>
@@ -94,24 +94,24 @@
             <div class="row row-apoyanos">
                 <div class="img-apoyanos col-md-6 col-lg-4 col-sm-12 mb-sm-3">
                     <div class="card">
-                        <img class="card-img" src="/AnimApp/assets/images/veterinaria1.jpg" alt="">
+                        <img class="card-img" src="/assets/images/veterinaria1.jpg" alt="">
                     </div>
                 </div>
                 <div class="img-apoyanos col-md-6 col-lg-4 col-sm-12 mb-sm-3">
                     <div class="card">
-                        <img class="card-img" src="/AnimApp/assets/images/ayuarPerroEncerrado.png" alt="">
+                        <img class="card-img" src="/assets/images/ayuarPerroEncerrado.png" alt="">
                     </div>
                 </div>
                 <div class="img-apoyanos col-md-6 col-lg-4 col-sm-12 mb-sm-3">
                     <div class="card">
-                        <img class="card-img" src="/AnimApp/assets/images/ayudarGato.png" alt="">
+                        <img class="card-img" src="/assets/images/ayudarGato.png" alt="">
                     </div>
                 </div>
             </div>
             <div class="row text-center">
                 <h3 class="text-success py-3 fs-2">Sé parte del cambio, ayuda a una vida peluda</h3>
                 <p>En <strong>AnimApp</strong>, cada patita tiene una historia que espera ser parte de la tuya.</p>
-                <a href="/AnimApp/views/home/apoyanos.php" class="btn btn-success w-25 btn-apoyanos">Quiero ayudar</a>
+                <a href="/views/home/apoyanos.php" class="btn btn-success w-25 btn-apoyanos">Quiero ayudar</a>
             </div>
         </div>
 

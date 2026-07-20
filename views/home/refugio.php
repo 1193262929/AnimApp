@@ -23,7 +23,7 @@
             <div class="col-8 row-refugio justify-content-center rounded">
                 <div class="row justify-content-end">
                     <div class="col-1 mt-2">
-                        <img class="img-fluid" src="/AnimApp/assets/images/refugio-de-animales.png" alt="">
+                        <img class="img-fluid" src="/assets/images/refugio-de-animales.png" alt="">
                     </div>
                 </div>
 
@@ -35,7 +35,7 @@
                 <div class="row">
                     <div class="col text-center">
                         <!-- <button class="btn btn-outline-success w-50">Publicar Mascotas</button> -->
-                        <a class="btn btn-outline-success w-50" href="/AnimApp/models/registrarMascota.php">Publicar Mascotas</a>
+                        <a class="btn btn-outline-success w-50" href="/models/registrarMascota.php">Publicar Mascotas</a>
                     </div>
                     <div class="col text-center">
                         <button class="btn btn-outline-success w-50">Registra Evento</button>
@@ -44,7 +44,7 @@
             </div>
 
             <div class="text-end inline-block">
-                <a class="btn btn-outline-light m-4 px-5" href="/AnimApp/controller/logout.php">Cerrar sesión</a>
+                <a class="btn btn-outline-light m-4 px-5" href="/controller/logout.php">Cerrar sesión</a>
             </div>
         </main>
     </div>

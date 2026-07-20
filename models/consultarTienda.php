@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 </div>
                             </div>
                             <div class="col-4">
-                                <img class="img-fluid w-50" src="/AnimApp/assets/images/veterinario.png" alt="Logo veterinaria">
+                                <img class="img-fluid w-50" src="/assets/images/veterinario.png" alt="Logo veterinaria">
                             </div>
                         </div>
                     </div>
@@ -89,7 +89,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 </div>
                             </div>
                             <div class="col-4">
-                                <img class="img-fluid w-50" src="/AnimApp/assets/images/veterinario.png" alt="Logo veterinaria">
+                                <img class="img-fluid w-50" src="/assets/images/veterinario.png" alt="Logo veterinaria">
                             </div>
                         </div>
                     </div>
@@ -138,7 +138,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 </div>
                             </div>
                             <div class="col-4">
-                                <img class="img-fluid w-50" src="/AnimApp/assets/images/veterinario.png" alt="Logo veterinaria">
+                                <img class="img-fluid w-50" src="/assets/images/veterinario.png" alt="Logo veterinaria">
                             </div>
                         </div>
                     </div>
