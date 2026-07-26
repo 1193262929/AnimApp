@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -20,7 +21,7 @@
                 <div class="card-body">
                     <h4 class="card-title">Usuario</h4>
                     <p class="card-text">Regístrate como dueño de mascotas para acceder a servicios, adoptar animales, agendar paseos y recibir atención veterinaria confiable.</p>
-                    <a href="/views/login/registroUsuario.php" class="btn btn-success">Registrarme</a>
+                    <a href="/views/login/registroUsuario.php" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Registrarme</a>
                 </div>
             </div>
 

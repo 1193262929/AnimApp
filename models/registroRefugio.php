@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__ . '/../conexion/conexion.php';
 require_once __DIR__ . '/../helpers/database.php';
+require_once __DIR__ . '/../helpers/upload.php';
 /**
  * @var mysqli $mysqli
  */
@@ -13,10 +14,10 @@ try {
         $descripcion = trim($_POST['descripcion'] ?? '');
         $email = trim($_POST['email'] ?? '');
         $password = trim($_POST['contrasena'] ?? '');
-        // Consulta para registrar un nuevo refugio
-        $query = "INSERT INTO refugios (nombre, telefono, direccion,  ciudad, descripcion, email, contraseña) VALUES (?, ?, ?, ?, ?, ?, ?);";
-        $datosUsuario = [$nombre, $telefono, $direccion, $ciudad, $descripcion, $email, $password];
-        $stmt = ejecutarConsulta($mysqli, $query, 'sssssss', $datosUsuario);
+        $imagenUrl = procesarImagen($_FILES);
+        $query = "INSERT INTO refugios (nombre, telefono, direccion,  ciudad, descripcion, imagen_url, email, contraseña) VALUES (?, ?, ?, ?, ?, ?, ?, ?);";
+        $datosUsuario = [$nombre, $telefono, $direccion, $ciudad, $descripcion, $imagenUrl, $email, $password];
+        $stmt = ejecutarConsulta($mysqli, $query, 'ssssssss', $datosUsuario);
         echo "<script>
              alert('Se registro el refugio correctamente');
              window.location.href = '/'; 

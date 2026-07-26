@@ -51,4 +51,30 @@ function obtenerRegistro(mysqli $mysqli, string $query, string $tipos, array $pa
     return $fila ?: null;
 }
 
+/**
+ * Ejecuta una consulta SELECT y devuelve todos los registros.
+ *
+ * @param mysqli $mysqli    Conexión a la base de datos.
+ * @param string $query     Consulta SQL.
+ * 
+ * @return array
+ * @throws Exception
+ */
+function obtenerTodosRegistros(mysqli $mysqli, string $query): array
+{
+    $stmt = $mysqli->prepare($query);
+    if (!$stmt) {
+        throw new Exception('Error al preparar la consulta: ' . $mysqli->error);
+    }
+
+    if (!$stmt->execute()) {
+        throw new Exception('Error al ejecutar la consulta: ' . $stmt->error);
+    }
+
+    $resultado = $stmt->get_result();
+    $registros = $resultado->fetch_all(MYSQLI_ASSOC);
+    $stmt->close();
+    return $registros;
+}
+
 

@@ -2,6 +2,10 @@
     background: linear-gradient(90deg,rgba(27, 121, 65, 1) 0%,rgba(46, 204, 113, 1) 35%,rgba(163, 228, 182, 1) 100%) ;
 }
 
+.div-imagen-servicio img {
+    object-fit: contain;
+}
+
 @media (width < 992px) {
     .form-usuario {
         width: 100% !important;

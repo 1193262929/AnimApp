@@ -1,5 +1,11 @@
 <?php
-include("../../controller/verificarSesion.php");
+require_once __DIR__ . '/../../controller/verificarSesion.php';
+$registros = [];
+$consultaRealizada = false;
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $consultaRealizada = true;
+    require_once __DIR__ . '/../../models/consultarServicios.php';
+}
 ?>
 
 <!DOCTYPE html>
@@ -18,127 +24,105 @@ include("../../controller/verificarSesion.php");
 <body class="d-flex flex-column min-vh-100">
 
     <header>
-        <?php require('../layout/header.php'); ?>
+        <?php require_once __DIR__ . '/../layout/header.php'; ?>
     </header>
 
     <main class="main flex-fill body-servicios">
-        <div class="container py-5">
-            <div class="row">
-                <div class="col-4">
-                    <img class="img-fluid rounded-circle w-50" src="/assets/images/servicios-1.jpg" alt="">
-                </div>
-                <div class="col-6 d-flex align-items-center">
-                    <h2 class="h1">¿QUE SERVICIO CONSULTAR?</h2>
-                </div>
-            </div>
+        <div class="container py-3">
 
             <div class="row">
-                <form class="row flex-column align-items-center my-3" action="/models/consultarServicios.php" method="post">
+                <div class="col-3">
+                    <form class="d-flex flex-column align-items-center gap-3" method="post">
 
-                    <div class="col-4 d-flex justify-content-between align-items-center py-2 border mb-2 rounded">
-                        <img src="/assets/images/tiendaAnimales.png" alt="Logo de la tienda" class="img-fluid w-25">
-                        <div class="form-check bg-white">
-                            <input type="checkbox" name="servicios[]" value="tiendas" class="form-check-input">
-                            <label for="terminos" class="form-check-label">Tiendas</label>
+                        <div class="d-flex justify-content-around align-items-center py-1 border rounded">
+                            <img src="/assets/images/tiendaAnimales.png" alt="Logo de la tienda" class="img-fluid w-25">
+                            <div class="form-check col-6">
+                                <input type="radio" name="servicio" value="tiendas" id="tiendas" class="form-check-input" required>
+                                <label for="tiendas" class="form-check-label">Tiendas</label>
+                            </div>
                         </div>
-                        <input type="submit" class="btn btn-outline-dark" value="CONSULTAR">
-                    </div>
 
-                    <div class="col-4 d-flex justify-content-between align-items-center py-2 border mb-2 rounded">
-                        <img src="/assets/images/paseadorPerro.png" alt="Logo del paseador" class="img-fluid w-25 mx-2">
-                        <div class="form-check">
-                            <input type="checkbox" name="servicios[]" value="paseador" class="form-check-input">
-                            <label for="terminos" class="form-check-label">Paseadores</label>
+                        <div class="d-flex justify-content-around align-items-center py-1 border rounded">
+                            <img src="/assets/images/veterinario.png" alt="Logo de la veterinaria" class="img-fluid w-25">
+                            <div class="form-check col-6">
+                                <input type="radio" name="servicio" value="veterinarias" id="veterinarias" class="form-check-input" required>
+                                <label for="veterinarias" class="form-check-label">Veterinarias</label>
+                            </div>
                         </div>
-                        <input type="submit" class="btn btn-outline-dark " value="CONSULTAR">
-                    </div>
 
-                    <div class="col-4 d-flex justify-content-between align-items-center py-2 border mb-2 rounded">
-                        <img src="/assets/images/veterinario.png" alt="Logo de la veterinaria" class="img-fluid w-25 ">
-                        <div class="form-chec">
-                            <input type="checkbox" name="servicios[]" value="veterinaria" class="form-check-input">
-                            <label for="terminos" class="form-check-label">Veterinarias</label>
+                        <div class="d-flex justify-content-around align-items-center py-1 border rounded">
+                            <img src="/assets/images/paseadorPerro.png" alt="Logo del paseador" class="img-fluid w-25">
+                            <div class="form-check col-6">
+                                <input type="radio" name="servicio" value="paseadores" id="paseadores" class="form-check-input" required>
+                                <label for="paseadores" class="form-check-label">Paseadores</label>
+                            </div>
                         </div>
-                        <input type="submit" class="btn btn-outline-dark" value="CONSULTAR">
-                    </div>
 
-                </form>
+                        <div class="col-10 d-flex justify-content-center">
+                            <input type="submit" class="btn btn-dark w-50" value="CONSULTAR">
+                        </div>
+                    </form>
+                </div>
+
+                <div class="col-9">
+                    <div>
+                        <h2 class="h1 text-center mb-3">¿QUE SERVICIO CONSULTAR?</h2>
+                    </div>
+                    <?php if (!$consultaRealizada) : ?>
+                        <h4 class="text-center text-secondary">Selecciona un servicio para consultar...</h4>
+                    <?php elseif (empty($registros)): ?>
+                        <h4 class="text-center text-secondary">No se encontraron registros.</h4>
+                    <?php else: ?>
+                        <?php foreach ($registros as $registro): ?>
+
+                            <div class="card mb-3 py-2">
+                                <div class="row g-0">
+                                    <div class="div-imagen-servicio col-md-4 d-flex justify-content-center">
+                                        <img src="/../../assets/ImgMascotas/<?= htmlspecialchars($registro['imagen_url']); ?>" class="img-fluid rounded-star w-50" alt="Imagen del servicio de <?= ucfirst(htmlspecialchars($registro['tipo_usuario'])); ?>">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <div class="row mb-2">
+                                                <h5 class="col-md-3 card-title"><?= ucfirst(htmlspecialchars($registro['tipo_usuario'])); ?></h5>
+                                                <h4 class="col-9 card-title text-primary"><?= htmlspecialchars($registro['nombre']); ?></h4>
+                                            </div>
+                                            <div class="row">
+                                                <p class="col-6 card-text"><strong>Email:</strong> <?= htmlspecialchars($registro['email']); ?></p>
+                                                <p class="col-6 card-text"><strong>Ciudad:</strong> <?= htmlspecialchars($registro['ciudad']); ?></p>
+                                            </div>
+                                            <div class="row">
+                                                <p class="col-6 card-text"><strong>Telefono:</strong> <?= htmlspecialchars($registro['telefono']); ?></p>
+                                                <?php if (!empty(htmlspecialchars($registro['direccion']))): ?>
+                                                    <p class="col-md-6 card-text"><strong>Direccion:</strong> <?= htmlspecialchars($registro['direccion']); ?></p>
+                                                <?php endif; ?>
+                                                <?php if (!empty(htmlspecialchars($registro['zona_trabajo']))): ?>
+                                                    <p class="col-6 card-text"><strong>Zona de trabajo:</strong> <?= htmlspecialchars($registro['zona_trabajo']); ?></p>
+                                                <?php endif; ?>
+                                            </div>
+                                            <div class="row">
+                                                <p class="col-6 card-text"><small class="text-body-secondary"><strong>Descripción:</strong> <?= htmlspecialchars($registro['descripcion']); ?></small></p>
+                                            </div>
+                                            <div class="row d-flex justify-content-end">
+                                                <?php if ($registro['tipo_usuario'] === 'paseador') : ?>
+                                                    <button type="button" class="btn btn-success w-25 mx-2">Contactar</button>
+                                                <?php else: ?>
+                                                    <button type="button" class="btn btn-warning w-25 mx-2">Visitar <?= ucfirst(htmlspecialchars($registro['tipo_usuario'])); ?></button>
+                                                <?php endif; ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+                </div>
             </div>
-            <!-- <div class="row flex-column align-items-center my-3">
-                <div class="col-4 d-flex py-2 border mb-2 rounded">
-                    <img src="/assets/images/tiendaAnimales.png" alt="Logo de la tienda" class="img-fluid w-25 mx-4">
-                    <form action="/models/consultarServicios.php" method="POST" class="text-center py-3 w-100">
-                        <div class="form-check mb-3">
-                            <input type="checkbox" name="tienda" value="tienda" class="form-check-input">
-                            <label for="terminos" class="form-check-label">Tiendas</label>
-                        </div>
-                        <input type="submit" class="btn btn-outline-dark w-75" value="CONSULTAR">
-                    </form>
-                </div>
-                <div class="col-4 d-flex py-2 border mb-2 rounded">
-                    <img src="/assets/images/paseadorPerro.png" alt="Logo del paseador" class="img-fluid w-25 mx-4">
-                    <form action="/models/consultarServicios.php" method="POST" class="text-center py-3 w-100">
-                        <div class="form-check mb-3">
-                            <input type="checkbox" name="paseador" value="paseador" class="form-check-input">
-                            <label for="terminos" class="form-check-label">Paseadores</label>
-                        </div>
-                        <input type="submit" class="btn btn-outline-dark w-75" value="CONSULTAR">
-                    </form>
-                </div>
-                <div class="col-4 d-flex py-2 border rounded">
-                    <img src="/assets/images/veterinario.png" alt="Logo de la veterinaria" class="img-fluid w-25 mx-4">
-                    <form action="/models/consultarServicios.php" method="POST" class="text-center py-3 w-100">
-                        <div class="form-check mb-3">
-                            <input type="checkbox" name="veterinaria" value="veterinaria" class="form-check-input">
-                            <label for="terminos" class="form-check-label">Veterinarias</label>
-                        </div>
-                        <input type="submit" class="btn btn-outline-dark w-75" value="CONSULTAR">
-                    </form>
-                </div>
-            </div> -->
-
-            <div class="row">
-
-                <?php include("../../models/consultarTienda.php"); ?>
-            </div>
-
-            <!-- <div class="row justify-content-center py-3">
-                <div class="col-10">
-                    <div class="row border py-3 rounded">
-                        <div class="col-8">
-                            <h2 class="text-center">VETERINARIA</h2>
-                            <p><strong>CatDog Hospital Veterinario</strong></p>
-                            <div class="row">
-                                <p class="col-6"><strong>Médico:</strong><br>Jose Alberto Marín</p>
-                                <p class="col-6"><strong>Telefono:</strong><br>300 6030931</p>
-                            </div>
-                            <div class="row">
-                                <p class="col-6"><strong>Horario:</strong><br>Abierto las 24 Hrs</p>
-                                <p class="col-6"><strong>Dirección:</strong><br>Cra. 50 #81a 47 Campo Valdes, Medellín, Antioquia</p>
-                            </div>
-                            <p><strong>Descripcion:</strong><br>Prestamos todos los servicios, estamos disponibles las 24 Hrs,
-                                adémas tenemos el servicio a domicilio</p>
-                            <div class="row justify-content-center">
-                                <a class="btn btn-dark w-50" href="#">Más Información</a>
-                            </div>
-                        </div>
-                        <div class="col-4">
-                            <img class="img-fluid w-75" src="/AnimApp/assets/images/veterinario.png" alt="Logo veterinaria">
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-
-        </div>
     </main>
 
     <footer>
-        <?php require('../layout/footer.php'); ?>
+        <?php require_once __DIR__ . '/../layout/footer.php'; ?>
     </footer>
-
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
 </body>
 
 </html>

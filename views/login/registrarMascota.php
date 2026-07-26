@@ -15,12 +15,12 @@
     <header>
         <?php require_once __DIR__ . '/../layout/header.php'; ?>
     </header>
-    
+
     <!-- A este formulario se le debe agregar un campo para almacenar una foto -->
 
     <main class="flex-fill container">
         <div class="row justify-content-center">
-            <form action="/models/registrarMascota.php" method="POST" class="form-usuario bg-white w-75 my-5 border border-secondary rounded">
+            <form action="/models/registrarMascota.php" method="POST" enctype="multipart/form-data" class="form-usuario bg-white w-75 my-5 border border-secondary rounded">
                 <h2 class="my-3 text-center">Registrar Mascota</h2>
                 <input type="hidden" name="id" value="1">
                 <div class="row">
@@ -46,9 +46,15 @@
                     </div>
                 </div>
 
-                <div class="form-group text-start col-md-6 mb-2">
-                    <label for="descripcion">Descripción:</label>
-                    <textarea class="form-control" name="descripcion" id="descripcion" rows="2"></textarea>
+                <div class="row">
+                    <div class="form-group text-start col-md-6 mb-2">
+                        <label for="descripcion">Descripción:</label>
+                        <textarea class="form-control" name="descripcion" id="descripcion" rows="2"></textarea>
+                    </div>
+                    <div class="form-group col-md-6 text-start mb-2">
+                        <label for="imagen">Seleccionar imagen</label>
+                        <input type="file" class="form-control" name="imagen" id="imagen" accept="image/*" required>
+                    </div>
                 </div>
 
                 <div class="row">

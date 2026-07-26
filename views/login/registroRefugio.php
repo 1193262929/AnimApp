@@ -16,10 +16,9 @@
         <?php require('../layout/header.php'); ?>
     </header>
 
-    <!-- A este formulario se le debe agregar un campo para almacenar una foto -->
     <main class="flex-fill container">
         <div class="row justify-content-center">
-            <form action="../../models/registroRefugio.php" method="POST" class="form-usuario bg-white w-75 my-5 border border-secondary rounded">
+            <form action="../../models/registroRefugio.php" method="POST" enctype="multipart/form-data" class="form-usuario bg-white w-75 my-5 border border-secondary rounded">
                 <h2 class="my-3 text-center">Crear cuenta refugio</h2>
                 <div class="row">
                     <div class="form-group col-md-6 text-start mb-2">
@@ -37,32 +36,31 @@
                         <label for="direccion">Direccion</label>
                         <input type="text" class="form-control" name="direccion" id="direccion" required>
                     </div>
-
                     <div class="form-group col-md-6 text-start mb-2">
                         <label for="direccion">Ciudad</label>
                         <input type="text" class="form-control" name="ciudad" id="ciudad" required>
                     </div>
                 </div>
 
-                <div class="form-group text-start mb-2">
-                    <label for="descripcion">Descripción:</label>
-                    <textarea class="form-control" name="descripcion" id="descripcion" rows="2"></textarea>
-                </div>
-
-                <div class="form-group col-md-5 text-start mb-2">
-                    <label for="email">Email</label>
-                    <input type="email" class="form-control" name="email" id="email" required>
+                <div class="row">
+                    <div class="col-md-6 form-group text-start mb-2">
+                        <label for="descripcion">Descripción:</label>
+                        <textarea class="form-control" name="descripcion" id="descripcion" rows="2"></textarea>
+                    </div>
+                    <div class="form-group col-md-6 text-start mb-2">
+                        <label for="imagen">Verificar contraseña</label>
+                        <input type="file" class="form-control" name="imagen" id="imagen" required>
+                    </div>
                 </div>
 
                 <div class="row">
                     <div class="form-group col-md-6 text-start mb-2">
-                        <label for="contrasena">Contraseña</label>
-                        <input type="password" class="form-control" name="contrasena" id="contrasena" required>
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" name="email" id="email" required>
                     </div>
                     <div class="form-group col-md-6 text-start mb-2">
-                        <label for="contrasena2">Verificar contraseña</label>
-                        <input type="password" class="form-control" name="contrasena2" id="contrasena2" required>
-
+                        <label for="contrasena">Contraseña</label>
+                        <input type="password" class="form-control" name="contrasena" id="contrasena" required>
                     </div>
                 </div>
 

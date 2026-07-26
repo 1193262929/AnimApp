@@ -13,14 +13,14 @@
 
 <body class="d-flex flex-column min-vh-100">
     <header>
-        <?php require('../layout/header.php'); ?>
+        <?php require_once __DIR__ . '/../layout/header.php'; ?>
     </header>
 
     <!-- A este formulario se le debe agregar un campo para almacenar una foto -->
 
     <main class="flex-fill container">
         <div class="row justify-content-center">
-            <form action="../../models/registroTienda.php" method="POST" class="form-usuario bg-white w-75 my-5 border border-secondary rounded">
+            <form action="../../models/registroTienda.php" method="POST" enctype="multipart/form-data" class="form-usuario bg-white w-75 my-5 border border-secondary rounded">
                 <h2 class="my-3 text-center">Crear cuenta tienda</h2>
                 <div class="row">
                     <div class="form-group col-md-6 text-start mb-2">
@@ -45,24 +45,25 @@
                     </div>
                 </div>
 
-                <div class="form-group text-start mb-2">
-                    <label for="descripcion">Descripción:</label>
-                    <textarea class="form-control" name="descripcion" id="descripcion" rows="2"></textarea>
-                </div>
-
-                <div class="form-group col-md-5 text-start mb-2">
-                    <label for="email">Email</label>
-                    <input type="email" class="form-control" name="email" id="email" required>
+                <div class="row">
+                    <div class="col-6 form-group text-start mb-2">
+                        <label for="descripcion">Descripción:</label>
+                        <textarea class="form-control" name="descripcion" id="descripcion" rows="2"></textarea>
+                    </div>
+                    <div class="col-6 form-group text-start mb-2">
+                        <label for="imagen">Imagen de la tienda</label>
+                        <input type="file" class="form-control" name="imagen" id="imagen" accept="image/*" required>
+                    </div>
                 </div>
 
                 <div class="row">
                     <div class="form-group col-md-6 text-start mb-2">
-                        <label for="contrasena">Contraseña</label>
-                        <input type="password" class="form-control" name="contrasena" id="contrasena" required>
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" name="email" id="email" required>
                     </div>
                     <div class="form-group col-md-6 text-start mb-2">
-                        <label for="contrasena2">Verificar contraseña</label>
-                        <input type="password" class="form-control" name="contrasena2" id="contrasena2" required>
+                        <label for="contrasena">Contraseña</label>
+                        <input type="password" class="form-control" name="contrasena" id="contrasena" required>
 
                     </div>
                 </div>
@@ -87,7 +88,7 @@
     </main>
 
     <footer>
-        <?php require('../layout/footer.php'); ?>
+        <?php require_once __DIR__ . '/../layout/footer.php'; ?>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>

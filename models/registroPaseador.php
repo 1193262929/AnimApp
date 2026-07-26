@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__ . '/../conexion/conexion.php';
 require_once __DIR__ . '/../helpers/database.php';
+require_once __DIR__ . '/../helpers/upload.php';
 /**
  * @var mysqli $mysqli
  */
@@ -13,16 +14,17 @@ try {
         $descripcion = trim($_POST['descripcion'] ?? '');
         $email = trim($_POST['email'] ?? '');
         $password = trim($_POST['contrasena'] ?? '');
-        $query = "INSERT INTO paseadores (nombre, telefono, ciudad, zona_trabajo, descripcion, email, contraseña) VALUES (?, ?, ?, ?, ?, ?, ?);";
-        $datosUsuario = [$nombre, $telefono, $ciudad, $zonaTrabajo, $descripcion, $email, $password];
-        $stmt = ejecutarConsulta($mysqli, $query, 'sssssss', $datosUsuario);
+        $imagenUrl = procesarImagen($_FILES);
+        $query = "INSERT INTO paseadores (nombre, telefono, ciudad, zona_trabajo, descripcion, imagen_url, email, contraseña) VALUES (?, ?, ?, ?, ?, ?, ?, ?);";
+        $datosUsuario = [$nombre, $telefono, $ciudad, $zonaTrabajo, $descripcion, $imagenUrl, $email, $password];
+        $stmt = ejecutarConsulta($mysqli, $query, 'ssssssss', $datosUsuario);
         echo "<script>
                 alert('Se registro el paseador exitosamente');
                 window.location.href = '/'; 
             </script>";
     }
 } catch (Exception $e) {
-    echo 'Error: ' . $e->getMessage();
+    echo 'Error: ' . $e->getMessage() . $e->getFile() . $e->getLine();
 } finally {
     if (isset($stmt)) {
         $stmt->close();
