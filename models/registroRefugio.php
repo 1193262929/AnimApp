@@ -18,13 +18,11 @@ try {
         $query = "INSERT INTO refugios (nombre, telefono, direccion,  ciudad, descripcion, imagen_url, email, contraseña) VALUES (?, ?, ?, ?, ?, ?, ?, ?);";
         $datosUsuario = [$nombre, $telefono, $direccion, $ciudad, $descripcion, $imagenUrl, $email, $password];
         $stmt = ejecutarConsulta($mysqli, $query, 'ssssssss', $datosUsuario);
-        echo "<script>
-             alert('Se registro el refugio correctamente');
-             window.location.href = '/'; 
-           </script>";
+        header('Location: ../?registro=ok&tipoUsuario=refugio');
+        exit;
     }
 } catch (Exception $e) {
-    echo 'Error: ' . $e->getMessage();
+    header('Location: ../?registro=error&mensaje=' . urlencode($e->getMessage()));
 } finally {
     if (isset($stmt)) {
         $stmt->close();

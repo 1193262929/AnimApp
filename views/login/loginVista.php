@@ -1,3 +1,7 @@
+<?php
+    $login = $_GET['login'] ?? null;
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -6,6 +10,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LOGIN | ANIMAPP</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"> -->
     <link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
     <!-- <link rel="stylesheet" href="/assets/css/02_style-login.css"> -->
     <link rel="stylesheet" href="../../assets/css/02_style-login.css">
@@ -37,15 +43,20 @@
 
                     <button type="submit" class="btn btn-dark w-75 mb-5">Iniciar sesion</button>
                 </form>
-
-                <?php if (isset($error)) echo "<p class='p-0' style='color:red;'>$error</p>"; ?>
             </div>
         </div>
         <div class="text-center mt-5">
             <a class="btn btn-success col-lg-4 col-sm-6" href="/index.php">Volver a Inicio</a>
         </div>
     </div>
-
+    <?php require_once __DIR__ . '/../layout/modales.php'; ?>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/js/index.js"></script>
+    <?php if ($login === 'error'): ?>
+        <script>
+            mostrarModalLoginError();
+        </script>
+    <?php endif; ?>
 </body>
 
 </html>

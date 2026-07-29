@@ -1,3 +1,8 @@
+<?php
+$registro = $_GET['registro'] ?? null; 
+$login = $_GET['login'] ?? null;
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -8,15 +13,16 @@
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/css/01_style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css">
 </head>
 
 <body class="d-flex flex-column min-vh-100">
 
     <header>
-        <?php require('./views/layout/header.php'); ?>
+        <?php require_once __DIR__ . '/views/layout/header.php'; ?>
     </header>
-    
-    <main class="main flex-fill">
+
+    <main class="main flex-fill" tabindex="-1">
         <!-- Container Imagen principal -->
         <div class="container-fluid container-inicio">
             <div class="row d-flex justify-content-center align-items-end h-100">
@@ -150,9 +156,29 @@
     </main>
 
     <footer class="mt-auto">
-        <?php require('./views/layout/footer.php'); ?>
+        <?php require_once __DIR__ . '/views/layout/footer.php'; ?>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-</body>
 
+    <?php require_once __DIR__ . '/views/layout/modales.php'; ?>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/js/index.js"></script>
+    <?php if ($registro === 'ok'): ?>
+        <script>
+            mostrarModalExito();
+        </script>
+    <?php elseif ($registro === 'error'): ?>
+        <script>
+            mostrarModalError();
+        </script>
+    <?php elseif ($registro === 'okMascota'): ?>
+        <script>
+            mostrarModalMascota();
+        </script>
+    <?php endif; ?>
+    <?php if ($login === 'ok'): ?>
+        <script>
+            mostrarModalLogin();
+        </script>
+    <?php endif; ?>
+</body>
 </html>

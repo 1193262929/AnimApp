@@ -18,13 +18,11 @@ try {
         $query = "INSERT INTO paseadores (nombre, telefono, ciudad, zona_trabajo, descripcion, imagen_url, email, contraseña) VALUES (?, ?, ?, ?, ?, ?, ?, ?);";
         $datosUsuario = [$nombre, $telefono, $ciudad, $zonaTrabajo, $descripcion, $imagenUrl, $email, $password];
         $stmt = ejecutarConsulta($mysqli, $query, 'ssssssss', $datosUsuario);
-        echo "<script>
-                alert('Se registro el paseador exitosamente');
-                window.location.href = '/'; 
-            </script>";
+        header('Location: ../?registro=ok&tipoUsuario=paseador');
+        exit;
     }
 } catch (Exception $e) {
-    echo 'Error: ' . $e->getMessage() . $e->getFile() . $e->getLine();
+    header('Location: ../?registro=error&mensaje=' . urlencode($e->getMessage()));
 } finally {
     if (isset($stmt)) {
         $stmt->close();

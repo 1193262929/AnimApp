@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             <div class="row">
                 <div class="col-3">
-                    <form class="d-flex flex-column align-items-center gap-3" method="post">
+                    <form class="d-flex flex-column align-items-center gap-2" method="post">
 
                         <div class="d-flex justify-content-around align-items-center py-1 border rounded">
                             <img src="/assets/images/tiendaAnimales.png" alt="Logo de la tienda" class="img-fluid w-25">
@@ -65,9 +65,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </div>
 
                 <div class="col-9">
-                    <div>
-                        <h2 class="h1 text-center mb-3">¿QUE SERVICIO CONSULTAR?</h2>
-                    </div>
                     <?php if (!$consultaRealizada) : ?>
                         <h4 class="text-center text-secondary">Selecciona un servicio para consultar...</h4>
                     <?php elseif (empty($registros)): ?>

@@ -10,7 +10,7 @@ try {
         'paseadores',
         'veterinarias'
     ];
-    $servicio = $_POST['servicio'] ?? '';
+    $servicio = $_POST['servicio'] ?? ''; // Agregar trim()
     if (!in_array($servicio, $tablasPermitidas, true)) { // explicacion de este condicional
         throw new Exception('Servicio invalido');
     }

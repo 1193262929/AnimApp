@@ -10,8 +10,6 @@ $tipo = $_SESSION['usuario']['tipo'];
 $id = $_SESSION['usuario']['id'];
 $idUsuario = $tipo === 'normal' ? (int)$id : null;
 $idRefugio = $tipo === 'refugio' ? (int)$id : null;
-
-
 try {
     if ($_SERVER["REQUEST_METHOD"] === 'POST') {
         $nombre = trim($_POST['nombre'] ?? '');
@@ -25,13 +23,11 @@ try {
         $query = "INSERT INTO mascotas(nombre, especie, raza, edad, genero, descripcion, imagen_url, estado, id_usuario, id_refugio) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
         $datosMascotas = [$nombre, $especie, $raza, $edad, $genero, $descripcion, $imagenUrl, $estado, $idUsuario, $idRefugio];
         $stmt = ejecutarConsulta($mysqli, $query, 'sssissssii', $datosMascotas);
-        echo "<script>
-            alert('Se registro la mascota');
-            window.location.href = '/';
-        </script>";
+        header('Location: ../?registro=okMascota');
+        exit;
     }
 } catch (Exception $e) {
-    echo 'Error: ' . $e->getMessage();
+    header('Location: ../?registro=error&mensaje=' . urlencode($e->getMessage()));
 } finally {
     if (isset($stmt)) {
         $stmt->close();

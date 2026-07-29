@@ -17,14 +17,12 @@ try {
         $imagenUrl = procesarImagen($_FILES);
         $query = "INSERT INTO veterinarias (nombre, telefono, direccion,  ciudad, descripcion, imagen_url, email, contraseña) VALUES (?, ?, ?, ?, ?, ?, ?, ?);";
         $datosUsuario = [$nombre, $telefono, $direccion, $ciudad, $descripcion, $imagenUrl, $email, $password];
-        $stmt = ejecutarConsulta($mysqli, $query, 'ssssssss', $datosUsuario); 
-        echo "<script>
-             alert('Se registro la veterinaria exitosamente');
-             window.location.href = '/'; 
-           </script>";
+        $stmt = ejecutarConsulta($mysqli, $query, 'ssssssss', $datosUsuario);
+        header('Location: ../?registro=ok&tipoUsuario=veterinaria');
+        exit;
     }
 } catch (Exception $e) {
-    echo 'Error: ' . $e->getMessage();
+    header('Location: ../?registro=error&mensaje=' . urlencode($e->getMessage()));
 } finally {
     if (isset($stmt)) {
         $stmt->close();

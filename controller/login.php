@@ -42,15 +42,17 @@ try {
                 ];
                 if (isset($redirecciones[$tipo])) {
                     $ruta = $redirecciones[$tipo];
-                    header("Location: $ruta");
+                    // header("Location: $ruta");
+                    header("Location: $ruta?login=ok");
                     exit;
                 }
             }
         }
+        throw new Exception('Correo o contraseña incorrectos');
     }
 } catch (Exception $e) {
-    echo 'Error: ' . $e->getMessage();
+    header("Location: /views/login/loginVista.php?login=error&mensaje=" . urlencode($e->getMessage()));
+    exit;
 } finally {
     $mysqli->close();
 }
-require_once __DIR__ . '/../views/login/loginVista.php';

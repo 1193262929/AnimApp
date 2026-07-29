@@ -16,8 +16,6 @@
         <?php require_once __DIR__ . '/../layout/header.php'; ?>
     </header>
 
-    <!-- A este formulario se le debe agregar un campo para almacenar una foto -->
-
     <main class="flex-fill container">
         <div class="row justify-content-center">
             <form action="/models/registrarMascota.php" method="POST" enctype="multipart/form-data" class="form-usuario bg-white w-75 my-5 border border-secondary rounded">
@@ -39,7 +37,6 @@
                         <label for="raza">Raza</label>
                         <input type="text" class="form-control" name="raza" id="raza" required>
                     </div>
-
                     <div class="form-group col-md-6 text-start mb-2">
                         <label for="edad">Edad mascota</label>
                         <input type="int" class="form-control" name="edad" id="edad" required>
@@ -86,12 +83,10 @@
                 </div>
 
                 <div class="container text-center">
-                    <button type="submit" class="btn btn-dark w-50 my-3">Crear cuenta</button>
+                    <button type="submit" class="btn btn-dark w-50 my-3">Registrar</button>
                 </div>
-
             </form>
         </div>
-
     </main>
 
     <footer>

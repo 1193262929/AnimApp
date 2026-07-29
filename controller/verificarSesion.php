@@ -5,6 +5,7 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 
 if (!isset($_SESSION['usuario'])) {
-    header("Location: /controller/login.php");
+    // header("Location: /controller/login.php");
+    header('Location: /views/login/loginVista.php');
     exit;
 }

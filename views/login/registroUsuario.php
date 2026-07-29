@@ -13,7 +13,7 @@
 
 <body class="d-flex flex-column min-vh-100">
     <header>
-        <?php require('../layout/header.php'); ?>
+        <?php require_once __DIR__ . '/../layout/header.php'; ?>
     </header>
 
     <main class="flex-fill container">
@@ -41,7 +41,6 @@
                             <label for="direccion">Direccion</label>
                             <input type="text" class="form-control" name="direccion" id="direccion" required>
                         </div>
-
                         <div class="form-group col-md-6 text-start mb-2">
                             <label for="direccion">Ciudad</label>
                             <input type="text" class="form-control" name="ciudad" id="ciudad" required>
@@ -60,7 +59,6 @@
                         <div class="form-group col-md-6 text-start mb-2">
                             <label for="contrasena2">Verificar contraseña</label>
                             <input type="password" class="form-control" name="contrasena2" id="contrasena2" required>
-
                         </div>
                     </div>
 
@@ -77,14 +75,11 @@
                     <div class="container text-center">
                         <button type="submit" class="btn btn-dark w-50 my-3">Crear cuenta</button>                      
                     </div>
-
             </form>
         </div>
-
     </main>
-
     <footer>
-        <?php require('../layout/footer.php'); ?>
+        <?php require_once __DIR__ . '/../layout/footer.php'; ?>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
