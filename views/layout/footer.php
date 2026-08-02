@@ -39,3 +39,6 @@
         <p class="text-center">© 2026 Todos los derechos reservados AnimApp.com</p>
     </div>
 </div>
+
+<script src="/assets/js/modales.js"></script>
+<script src="/assets/js/mascotas.js"></script>

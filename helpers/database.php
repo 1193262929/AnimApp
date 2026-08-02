@@ -60,17 +60,18 @@ function obtenerRegistro(mysqli $mysqli, string $query, string $tipos, array $pa
  * @return array
  * @throws Exception
  */
-function obtenerTodosRegistros(mysqli $mysqli, string $query): array
+function obtenerTodosRegistros(mysqli $mysqli, string $query, string $tipos = '', array $parametros = []): array
 {
     $stmt = $mysqli->prepare($query);
     if (!$stmt) {
         throw new Exception('Error al preparar la consulta: ' . $mysqli->error);
     }
-
+    if (!empty($parametros)) {
+        $stmt->bind_param($tipos, ...$parametros);
+    }
     if (!$stmt->execute()) {
         throw new Exception('Error al ejecutar la consulta: ' . $stmt->error);
     }
-
     $resultado = $stmt->get_result();
     $registros = $resultado->fetch_all(MYSQLI_ASSOC);
     $stmt->close();

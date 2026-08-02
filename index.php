@@ -10,10 +10,10 @@ $login = $_GET['login'] ?? null;
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ANIMAPP | INICIO </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/css/01_style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css">
 </head>
 
 <body class="d-flex flex-column min-vh-100">
@@ -26,7 +26,7 @@ $login = $_GET['login'] ?? null;
         <!-- Container Imagen principal -->
         <div class="container-fluid container-inicio">
             <div class="row d-flex justify-content-center align-items-end h-100">
-                <div class="col-xl-6 col-lg-8 col-md-10 text-white text-center p-4 mb-3 rounded-2 inicio-cont-mensaje">
+                <div class="col-xl-6 col-lg-8 col-md-10 col-sm-12 text-white text-center p-4 mb-3 rounded-2 inicio-cont-mensaje">
                     <h1>Adopta con amor. Vive con proposito</h1>
                     <p>En <strong>AnimApp</strong>, cada patita tiene una historia que esperea ser parte de la tuya</p>
                 </div>
@@ -146,7 +146,7 @@ $login = $_GET['login'] ?? null;
                                     <label for="terminos" class="form-check-label">Acepto los terminos y
                                         condiciones</label>
                                 </div>
-                                <button type="button" class="btn btn-dark w-100">ENVIAR</button>
+                                <button type="button" class="btn btn-dark w-100">ENVIAR<button>
                             </div>
                         </div>
                     </form>
@@ -155,13 +155,12 @@ $login = $_GET['login'] ?? null;
         </div>
     </main>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <?php require_once __DIR__ . '/views/layout/modales.php'; ?>
     <footer class="mt-auto">
         <?php require_once __DIR__ . '/views/layout/footer.php'; ?>
     </footer>
 
-    <?php require_once __DIR__ . '/views/layout/modales.php'; ?>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="/assets/js/index.js"></script>
     <?php if ($registro === 'ok'): ?>
         <script>
             mostrarModalExito();
@@ -169,10 +168,12 @@ $login = $_GET['login'] ?? null;
     <?php elseif ($registro === 'error'): ?>
         <script>
             mostrarModalError();
+            console.log("Error archivo index");
         </script>
     <?php elseif ($registro === 'okMascota'): ?>
         <script>
             mostrarModalMascota();
+            console.log("modal mostrar mascotas")
         </script>
     <?php endif; ?>
     <?php if ($login === 'ok'): ?>
@@ -180,5 +181,6 @@ $login = $_GET['login'] ?? null;
             mostrarModalLogin();
         </script>
     <?php endif; ?>
+    
 </body>
 </html>

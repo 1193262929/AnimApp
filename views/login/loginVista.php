@@ -1,5 +1,5 @@
 <?php
-    $login = $_GET['login'] ?? null;
+$login = $_GET['login'] ?? null;
 ?>
 
 <!DOCTYPE html>
@@ -10,11 +10,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LOGIN | ANIMAPP</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"> -->
     <link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
     <!-- <link rel="stylesheet" href="/assets/css/02_style-login.css"> -->
     <link rel="stylesheet" href="../../assets/css/02_style-login.css">
+    <link rel="stylesheet" href="/assets/css/04_modales.css">
 </head>
 
 <body>
@@ -49,9 +51,10 @@
             <a class="btn btn-success col-lg-4 col-sm-6" href="/index.php">Volver a Inicio</a>
         </div>
     </div>
+    
     <?php require_once __DIR__ . '/../layout/modales.php'; ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="/assets/js/index.js"></script>
+    <script src="/assets/js/modales.js"></script>
     <?php if ($login === 'error'): ?>
         <script>
             mostrarModalLoginError();

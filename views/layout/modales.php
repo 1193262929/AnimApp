@@ -1,4 +1,4 @@
-<?php 
+<?php
 $mensaje = $_GET['mensaje'] ?? 'Ocurrio un error inesperado.';
 $tipoUsuario = $_GET['tipoUsuario'];
 $usuario = $tipoUsuario === 'normal' ? 'usuario' : $tipoUsuario;
@@ -9,10 +9,12 @@ $usuario = $tipoUsuario === 'normal' ? 'usuario' : $tipoUsuario;
 <div class="modal fade" id="registroExitoso" tabindex="-1" aria-labelledby="registroExitoso" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
-            <div class="modal-body text-center text-success">
-                <div><i class="fa-solid fa-circle-check fs-1"></i></div>
-                <p class="my-3">¡Tu registro de <?= $usuario ?> se guardó exitosamente!</p>
-                <p class="my-3 fs-4">YA PUEDES INICIAR SESIÓN</p>
+            <div class="modal-body text-center">
+                <div class="icono-modal icono-exito">
+                    <i class="fa-solid fa-circle-check"></i>
+                </div>
+                <h4 class="titulo-modal">¡Registro de <?= $usuario ?> exitosamente!</h4>
+                <p class="texto-modal">Tu información fue guardo correctamente.</p>
             </div>
         </div>
     </div>
@@ -21,9 +23,12 @@ $usuario = $tipoUsuario === 'normal' ? 'usuario' : $tipoUsuario;
 <div class="modal fade" id="registroError" tabindex="-1" aria-labelledby="registroError" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
-            <div class="modal-body text-center text-danger">
-                <div><i class="fa-solid fa-square-xmark fs-1"></i></div>
-                <p class="my-3"><?= htmlspecialchars($mensaje); ?></p>
+            <div class="modal-body text-center">
+                <div class="icono-modal icono-error">
+                    <i class="fa-solid fa-circle-xmark"></i>
+                </div>
+                <h4 class="titulo-modal">No fue posible completar la operación</h4>
+                <p class="texto-modal"><?= htmlspecialchars($mensaje); ?></p>
             </div>
         </div>
     </div>
@@ -32,9 +37,12 @@ $usuario = $tipoUsuario === 'normal' ? 'usuario' : $tipoUsuario;
 <div class="modal fade" id="registroMascota" tabindex="-1" aria-labelledby="registroMascota" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
-            <div class="modal-body text-center text-success">
-                <div><i class="fa-solid fa-circle-check fs-1"></i></div>
-                <p class="my-3 fs-2">!Se registro la mascota exitosamente!</p>
+            <div class="modal-body text-center">
+                <div class="icono-modal icono-exito">
+                    <i class="fa-solid fa-circle-check"></i>
+                </div>
+                <h3 class="titulo-modal">!Registro exitoso!</h3>
+                <p class="texto-modal">Tu información fue registrada correctamente.</p>
             </div>
         </div>
     </div>
@@ -45,9 +53,12 @@ $usuario = $tipoUsuario === 'normal' ? 'usuario' : $tipoUsuario;
 <div class="modal fade" id="bienvenidadLogin" tabindex="-1" aria-labelledby="bienvenidoLogin" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
-            <div class="modal-body text-center text-success p-5">
-                <div><i class="fa-solid fa-circle-check fs-1"></i></div>
-                <p class="my-3 fs-2">!BIENVENIDO A ANIMAPP!</p>
+            <div class="modal-body text-center">
+                <div class="icono-modal icono-exito">
+                    <i class="fa-solid fa-circle-check"></i>
+                </div>
+                <h4 class="titulo-modal">!Login exitoso!</h4>
+                <p class="text-modal">!BIENVENIDO A ANIMAPP!</p>
             </div>
         </div>
     </div>
@@ -56,10 +67,14 @@ $usuario = $tipoUsuario === 'normal' ? 'usuario' : $tipoUsuario;
 <div class="modal fade" id="loginError" tabindex="-1" aria-labelledby="loginError" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
-            <div class="modal-body text-center text-danger p-5">
-                <div><i class="fa-solid fa-square-xmark fs-1"></i></div>
-                <p class="my-3 fs-3"><?= htmlspecialchars($mensaje); ?></p>
+            <div class="modal-body text-center">
+                <div class="icono-modal icono-error">
+                    <i class="fa-solid fa-circle-xmark"></i>
+                </div>
+                <h4 class="titulo-modal">No fue posible completar la operación</h4>
+                <p class="texto-modal"><?= htmlspecialchars($mensaje); ?></p>
             </div>
         </div>
     </div>
 </div>
+

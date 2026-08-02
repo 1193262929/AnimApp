@@ -2,6 +2,7 @@
 require_once __DIR__ . '/../conexion/conexion.php';
 require_once __DIR__ . '/../helpers/database.php';
 require_once __DIR__ . '/../helpers/upload.php';
+require_once __DIR__ . '/../helpers/errores.php';
 /**
  * @var mysqli $mysqli
  */
@@ -22,7 +23,9 @@ try {
         exit;
     }
 } catch (Exception $e) {
-    header('Location: ../?registro=error&mensaje=' . urlencode($e->getMessage()));
+    $mensaje = obtenerMensajeErrorDB($e->getCode());
+    header('Location: /views/login/registroTienda.php?registro=error&mensaje=' . urlencode($mensaje));
+    exit;
 } finally {
     if (isset($stmt)) {
         $stmt->close();

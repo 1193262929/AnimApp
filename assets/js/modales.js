@@ -1,13 +1,24 @@
+// -----MODALES PARA EL REGISTRO-----
+
 const elementoModalExito = document.getElementById('registroExitoso');
 let modalExito = null;
 if (elementoModalExito) {
     modalExito = new bootstrap.Modal(elementoModalExito);
 }
+/**
+ * Muestra un modal de éxito de forma temporal y limpia la URL.
+ * 
+ * Esta función despliega el modal de confirmación `modalExito` en pantalla,
+ * lo mantiene visible durante 2.5 segundos y luego lo oculta automáticamente.
+ * 
+ * @function mostrarModalExito
+ * @returns {void} No retorna valores; modifica el DOM y el historial del navegador.
+ */
 window.mostrarModalExito = () => {
     modalExito.show();
     setTimeout(() => {
         modalExito.hide();
-    }, 3000)
+    }, 2500)
     window.history.replaceState({}, '', window.location.pathname);// Explicacion de esta linea 
 }
 
@@ -18,6 +29,7 @@ if (elementoModalError) {
 }
 window.mostrarModalError = () => {
     modalError.show();
+    console.log("Error archivo javascript");
     setTimeout(() => {
         modalError.hide();
     }, 3000)
@@ -33,7 +45,7 @@ window.mostrarModalMascota = () => {
     modalMascota.show();
     setTimeout(() => {
         modalMascota.hide();
-    }, 3000)
+    }, 2500)
     window.history.replaceState({}, '', window.location.pathname);
 }
 
@@ -48,7 +60,7 @@ window.mostrarModalLogin = () => {
     modalLogin.show();
     setTimeout(() => {
         modalLogin.hide();
-    }, 2000)
+    }, 2500)
     window.history.replaceState({}, '', window.location.pathname);
 }
 
@@ -61,8 +73,6 @@ window.mostrarModalLoginError = () => {
     modalLoginError.show();
     setTimeout(() => {
         modalLoginError.hide();
-    }, 2000)
+    }, 3000)
     window.history.replaceState({}, '', window.location.pathname);
 }
-
-console.log("JS");
