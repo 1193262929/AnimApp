@@ -6,7 +6,7 @@
     border: none;
     border-radius: 18px;
     overflow: hidden;
-    box-shadow: 0 18px 40px rgba(0,0,0,.20);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.2);
 }
 
 .modal-header {
@@ -15,7 +15,7 @@
 }
 
 .modal-header .btn-close {
-    margin-top: .25rem;
+    margin-top: 0.25rem;
 }
 
 .modal-body {
@@ -32,7 +32,7 @@
 }
 
 .btn-close {
-    transition: .25s;
+    transition: 0.25s;
 }
 
 .btn-close:hover {
@@ -62,14 +62,14 @@
 }
 
 .modal.fade .modal-dialog {
-    transition: .35s ease;
+    transition: 0.35s ease;
 }
 
 .titulo-modal {
     font-size: 1.5rem;
     font-weight: 700;
     color: #343a40;
-    margin-bottom: .8rem;
+    margin-bottom: 0.8rem;
 }
 
 .texto-modal {
@@ -87,40 +87,71 @@
 }
 
 .tarjeta-mascota {
-    transition: .25s ease;
+    transition: 0.25s ease;
 }
 
 .tarjeta-mascota:hover {
     transform: translateY(-6px);
-    box-shadow: 0 15px 35px rgba(0,0,0,.18);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
 }
 
 .tarjeta-mascota img {
     width: 100%;
     height: 300px;
     object-fit: cover;
-    border-radius: 12px, 12px 0 0;
+    border-radius:
+        12px,
+        12px 0 0;
 }
 
 .tarjeta-mascota .card-body {
-    padding-top: .5rem;
-    padding-bottom: .7rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.7rem;
 }
 
-.tarjeta-mascota .card-title, .text-raza {
+.tarjeta-mascota .card-title,
+.text-raza {
     margin-bottom: 0;
 }
 
-.tarjeta-mascota .text-muted, .text-genero {
-    margin-bottom: .2rem;
+.tarjeta-mascota .text-muted,
+.text-genero {
+    margin-bottom: 0.2rem;
 }
 
 .tarjeta-mascota .btn {
     font-size: 1.2rem;
-    padding: .35rem .45rem;
-    transition: .2s;
+    padding: 0.35rem 0.45rem;
+    transition: 0.2s;
 }
 
 .tarjeta-mascota .btn:hover {
     transform: scale(1.08);
 }
+
+/*===========================================
+    ENLACES DEL FOOTER  
+============================================*/
+
+.footer-link {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-link:hover {
+    color: #7dffb2;
+}
+
+.social-icon {
+    transition: 0.25s;
+}
+
+.social-icon:hover {
+    transform: scale(1.12);
+}
+
+/*==========================================================
+    ADOPCIONES
+============================================================*/
+
+

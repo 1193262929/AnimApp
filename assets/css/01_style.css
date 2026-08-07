@@ -1,13 +1,55 @@
-:root {
-  /* VERDES */
-  --color-principal: #1b7941;
-  --color-medio: #2ecc71;
-  --color-light: #a3e4b6;
+:root{
 
-  /* OSCUROS */
-  --color-dark: #0e0e0e;
-  --color-dark-medio: #616161;
-  --color-dark-light: #e0e0e0;
+    /*======================================
+                PALETA VERDE
+    ======================================*/
+
+    --color-principal:#1b7941;
+    --color-principal-hover:#166235;
+
+    --color-medio:#2ecc71;
+    --color-light:#a3e4b6;
+
+    /*======================================
+                COLORES NEUTROS
+    ======================================*/
+
+    --color-white:#ffffff;
+    --color-light-gray:#f8f9fa;
+
+    /*======================================
+                GRISES Y OSCUROS
+    ======================================*/
+
+    --color-dark:#0e0e0e;
+    --color-dark-medio:#616161;
+    --color-dark-light:#e0e0e0;
+
+    /*======================================
+                SOMBRAS
+    ======================================*/
+
+    --shadow-sm:0 6px 15px rgba(0,0,0,.08);
+    --shadow-md:0 12px 30px rgba(0,0,0,.15);
+    --shadow-lg:0 20px 45px rgba(0,0,0,.20);
+
+    /*======================================
+                BORDES
+    ======================================*/
+
+    --radius-sm:.5rem;
+    --radius-md:1rem;
+    --radius-lg:1.5rem;
+    --radius-xl:2rem;
+
+    /*======================================
+                TRANSICIONES
+    ======================================*/
+
+    --transition-fast:.2s ease;
+    --transition-normal:.35s ease;
+    --transition-slow:.5s ease;
+
 }
 
 /* ENCABEZADO */

@@ -107,7 +107,7 @@ async function cargarMascotas() {
 }
 
 const enlaceMascotas = document.querySelector('#mostrarMascotas');
-const elementoModalMascotasUsuario = document.querySelector('#miModal');
+const elementoModalMascotasUsuario = document.querySelector('#modalMascotasUsuario');
 let modalMascotasUsuario = null;
 if (elementoModalMascotasUsuario) {
     modalMascotasUsuario = new bootstrap.Modal(elementoModalMascotasUsuario);

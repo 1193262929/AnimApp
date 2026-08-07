@@ -51,7 +51,7 @@ window.mostrarModalMascota = () => {
 
 // -------------MODAL-LOGIN------------
 
-const elementoModalLogin = document.getElementById('bienvenidadLogin');
+const elementoModalLogin = document.getElementById('bienvenidaLogin');
 let modalLogin = null;
 if (elementoModalLogin) {
     modalLogin = new bootstrap.Modal(elementoModalLogin);

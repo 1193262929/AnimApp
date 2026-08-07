@@ -1,5 +1,16 @@
 .body-servicios {
-    background: linear-gradient(90deg,rgba(27, 121, 65, 1) 0%,rgba(46, 204, 113, 1) 35%,rgba(163, 228, 182, 1) 100%) ;
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(163, 228, 182, 0.35),
+            transparent 40%
+        ),
+        radial-gradient(
+            circle at bottom left,
+            rgba(46, 204, 113, 0.18),
+            transparent 35%
+        ),
+        #f8fcf9;
 }
 
 .div-imagen-servicio img {

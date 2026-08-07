@@ -20,6 +20,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="/assets/css/01_style.css">
     <link rel="stylesheet" href="/assets/css/03_registros.css">
+    <link rel="stylesheet" href="/assets/css/04_modales.css">
+    <link rel="stylesheet" href="/assets/css/05_cards.css">
+    <link rel="stylesheet" href="/assets/css/07_botones.css">
 </head>
 
 <body class="d-flex flex-column min-vh-100">
@@ -27,91 +30,122 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <header>
         <?php require_once __DIR__ . '/../layout/header.php'; ?>
     </header>
-
     <main class="main flex-fill body-servicios">
-        <div class="container py-3">
 
+        <!--===================================================================== 
+            CONTENIDO PRINCIPAL
+        =========================================================================-->
+        <div class="container py-4">
             <div class="row">
-                <div class="col-3">
-                    <form class="d-flex flex-column align-items-center gap-2" method="post">
+                <div class="col-lg-3 col-md-4 mb-3">
+                <!-- =========================================
+                    PANEL DE FILTROS
+                ========================================= -->
+                    <div class="text-center py-1">
+                        <i class="fa-solid fa-magnifying-glass fa-3x text-success mb-3"></i>
+                        <h4 class="fw-bold"> Busca un servicio</h4>
+                        <p class="text-muted">Selecciona una categoría para comenzar la búsqueda.</p>
+                    </div>
 
-                        <div class="d-flex justify-content-around align-items-center py-1 border rounded">
-                            <img src="/assets/images/tiendaAnimales.png" alt="Logo de la tienda" class="img-fluid w-25">
-                            <div class="form-check col-6">
-                                <input type="radio" name="servicio" value="tiendas" id="tiendas" class="form-check-input" required>
-                                <label for="tiendas" class="form-check-label">Tiendas</label>
-                            </div>
-                        </div>
-
-                        <div class="d-flex justify-content-around align-items-center py-1 border rounded">
-                            <img src="/assets/images/veterinario.png" alt="Logo de la veterinaria" class="img-fluid w-25">
-                            <div class="form-check col-6">
-                                <input type="radio" name="servicio" value="veterinarias" id="veterinarias" class="form-check-input" required>
-                                <label for="veterinarias" class="form-check-label">Veterinarias</label>
-                            </div>
-                        </div>
-
-                        <div class="d-flex justify-content-around align-items-center py-1 border rounded">
-                            <img src="/assets/images/paseadorPerro.png" alt="Logo del paseador" class="img-fluid w-25">
-                            <div class="form-check col-6">
-                                <input type="radio" name="servicio" value="paseadores" id="paseadores" class="form-check-input" required>
-                                <label for="paseadores" class="form-check-label">Paseadores</label>
-                            </div>
-                        </div>
-
-                        <div class="col-10 d-flex justify-content-center">
-                            <input type="submit" class="btn btn-dark w-50" value="CONSULTAR">
-                        </div>
-                    </form>
-                </div>
-
-                <div class="col-9">
-                    <?php if (!$consultaRealizada) : ?>
-                        <h4 class="text-center text-secondary">Selecciona un servicio para consultar...</h4>
-                    <?php elseif (empty($registros)): ?>
-                        <h4 class="text-center text-secondary">No se encontraron registros.</h4>
-                    <?php else: ?>
-                        <?php foreach ($registros as $registro): ?>
-
-                            <div class="card mb-3 py-2">
-                                <div class="row g-0">
-                                    <div class="div-imagen-servicio col-md-4 d-flex justify-content-center">
-                                        <img src="/../../assets/ImgMascotas/<?= htmlspecialchars($registro['imagen_url']); ?>" class="img-fluid rounded-star w-50" alt="Imagen del servicio de <?= ucfirst(htmlspecialchars($registro['tipo_usuario'])); ?>">
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="card-body">
-                                            <div class="row mb-2">
-                                                <h5 class="col-md-3 card-title"><?= ucfirst(htmlspecialchars($registro['tipo_usuario'])); ?></h5>
-                                                <h4 class="col-9 card-title text-primary"><?= htmlspecialchars($registro['nombre']); ?></h4>
-                                            </div>
-                                            <div class="row">
-                                                <p class="col-6 card-text"><strong>Email:</strong> <?= htmlspecialchars($registro['email']); ?></p>
-                                                <p class="col-6 card-text"><strong>Ciudad:</strong> <?= htmlspecialchars($registro['ciudad']); ?></p>
-                                            </div>
-                                            <div class="row">
-                                                <p class="col-6 card-text"><strong>Telefono:</strong> <?= htmlspecialchars($registro['telefono']); ?></p>
-                                                <?php if (!empty(htmlspecialchars($registro['direccion']))): ?>
-                                                    <p class="col-md-6 card-text"><strong>Direccion:</strong> <?= htmlspecialchars($registro['direccion']); ?></p>
-                                                <?php endif; ?>
-                                                <?php if (!empty(htmlspecialchars($registro['zona_trabajo']))): ?>
-                                                    <p class="col-6 card-text"><strong>Zona de trabajo:</strong> <?= htmlspecialchars($registro['zona_trabajo']); ?></p>
-                                                <?php endif; ?>
-                                            </div>
-                                            <div class="row">
-                                                <p class="col-6 card-text"><small class="text-body-secondary"><strong>Descripción:</strong> <?= htmlspecialchars($registro['descripcion']); ?></small></p>
-                                            </div>
-                                            <div class="row d-flex justify-content-end">
-                                                <?php if ($registro['tipo_usuario'] === 'paseador') : ?>
-                                                    <button type="button" class="btn btn-success w-25 mx-2">Contactar</button>
-                                                <?php else: ?>
-                                                    <button type="button" class="btn btn-warning w-25 mx-2">Visitar <?= ucfirst(htmlspecialchars($registro['tipo_usuario'])); ?></button>
-                                                <?php endif; ?>
+                    <div class="card shadow-sm border-0">
+                        <div class="card-body">
+                            <form class="d-grid gap-3" method="post">
+                                <label class="opcion-servicio d-flex align-items-center justify-content-between">
+                                    <div class="d-flex align-items-center">
+                                        <img class="icono-servicio me-3" src="/assets/images/tiendaAnimales.png" alt="Tienda">
+                                        <div>
+                                            <strong>Tiendas</strong>
+                                            <div class="small text-muted">
+                                                Productos para mascotas
                                             </div>
                                         </div>
                                     </div>
+                                    <input class="form-check-input" type="radio" name="servicio" value="tiendas" required>
+                                </label>
+
+                                <label class="opcion-servicio d-flex align-items-center justify-content-between">
+                                    <div class="d-flex align-items-center">
+                                        <img class="icono-servicio me-3" src="/assets/images/veterinario.png" alt="Veterinaria">
+                                        <div>
+                                            <strong>Veterinarias</strong>
+                                            <div class="small text-muted">
+                                                Salud y bienestar
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <input class="form-check-input" type="radio" name="servicio" value="veterinarias" required>
+                                </label>
+
+                                <label class="opcion-servicio d-flex align-items-center justify-content-between">
+                                    <div class="d-flex align-items-center">
+                                        <img class="icono-servicio me-3" src="/assets/images/paseadorPerro.png" alt="paseadores">
+                                        <div>
+                                            <strong>Paseadores</strong>
+                                            <div class="small text-muted">
+                                                Paseos y ejercicio
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <input class="form-check-input" type="radio" name="servicio" value="paseadores" required>
+                                </label>
+
+                                <div class="col-10 d-flex justify-content-center">
+                                    <input type="submit" class="btn btn-animapp btn-animapp-success w-100 mt-2" value="CONSULTAR">
                                 </div>
-                            </div>
-                        <?php endforeach; ?>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-9 col-md-8">
+                    <!-- =========================================
+                        RESULTADOS DE LA CONSULTA
+                    ========================================= -->
+                    <div class="mb-4">
+                        <h2 class="fw-bold text-success"><i class="fa-solid fa-store me-2"></i>Servicios disponibles</h2>
+                        <p class="text-muted mb-0">Encuentra tiendas, veterinarias y paseadores cerca de ti.</p>
+                    </div>
+
+                    <?php if (!$consultaRealizada) : ?>
+                        <!-- Mensaje inicial -->
+                        <div class="text-center py-5">
+                            <i class="fa-solid fa-magnifying-glass fa-3x text-success mb-3"></i>
+                            <h4 class="fw-bold">Busca un servicio</h4>
+                            <p class="text-muted">Selecciona una categoría para comenzar.</p>
+                        </div>
+
+                    <?php elseif (empty($registros)): ?>
+                        <!-- Sin resultados -->
+                        <div class="text-center py-5">
+                            <i class="fa-solid fa-circle-info fa-3x text-secondary mb-3"></i>
+                            <h4>No encontramos resultados.</h4>
+                            <p class="text-muted">Intenta realizar otra búsqueda.</p>
+                        </div>
+                    <?php else: ?>
+                        <!-- Tarjetas -->
+                        <div class="contenedor-servicios">
+                            <?php foreach ($registros as $registro): ?>
+                                <?php
+                                $acciones = '';
+                                if ($registro['tipo_usuario'] === 'paseador') {
+                                    $acciones = '
+                                    <a href="#" class="btn btn-animapp btn-animapp-success">
+                                        <i class="fa-solid fa-comments me-2"></i>
+                                        Contactar
+                                    </a>';
+                                } else {
+                                    $acciones = '
+                                    <a href="#" class="btn btn-animapp btn-animapp-warning">
+                                        <i class="fa-solid fa-store me-2"></i>
+                                        Visitar ' . ucfirst(htmlspecialchars($registro['tipo_usuario'])) . '
+                                    </a>';
+                                }
+                                ?>
+                                <div class="mb-3">
+                                    <?php include __DIR__ . '/../components/tarjetaServicio.php'; ?>
+                                </div>
+                            <?php endforeach; ?>
+                        </div>
                     <?php endif; ?>
                 </div>
             </div>
@@ -121,6 +155,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <footer>
         <?php require_once __DIR__ . '/../layout/footer.php'; ?>
     </footer>
+    <?php require_once __DIR__ . '/../layout/scripts.php'; ?>
 </body>
 
 </html>

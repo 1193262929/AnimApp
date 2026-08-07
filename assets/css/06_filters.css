@@ -1,0 +1,54 @@
+.panel-filtro {
+    position: sticky;
+    top: 1.5rem;
+}
+
+.panel-filtro .card {
+    border-radius: 18px;
+}
+
+.panel-filtro__titulo {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    margin-bottom: 1rem;
+    color: var(--color-principal);
+}
+
+.panel-filtro i {
+    font-size: 1rem;
+}
+
+.panel-filtro__titulo h2 {
+    margin: 0;
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+
+.panel-filtro .card {
+    border: none;
+    border-radius: 1.1rem;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .08);
+}
+
+.panel-filtro .card-body {
+    padding: 1rem;
+}
+
+.opcion-filtro {
+    border-color: #f7fdf9;
+    border: 2px solid #d9f3e2;
+    border-radius: .8rem;
+    padding: .6rem;
+    transition: .25s;
+}
+
+.opcion-filtro + .opcion-filtro {
+    margin-top: .5rem;
+}
+
+.opcion-filtro:hover {
+    border-color: var(--color-principal);
+    background: #eefaf3;
+} 

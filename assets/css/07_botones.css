@@ -1,0 +1,68 @@
+@import url(./01_style.css);
+.btn-animapp {
+    position: relative;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45rem;
+    padding: 0.7rem 1.4rem;
+    border: none;
+    border-radius: 0.9rem;
+    color: white;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        filter 0.25s ease;
+    box-shadow:
+        0 0.55rem 1rem rgba(0, 0, 0, 0.18),
+        0 0.15rem 0.35rem rgba(255, 255, 255, 0.18) inset;
+}
+
+.btn-animapp:hover {
+    transform: translateY(-3px);
+    box-shadow:
+        0 1rem 1.8rem rgba(0, 0, 0, 0.28),
+        0 0.2rem 0.45rem rgba(255, 255, 255, 0.22) inset;
+}
+
+.btn-animapp:active {
+    transform: translateY(2px);
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.22);
+}
+
+.btn-animapp-success {
+    background: linear-gradient(
+        135deg,
+        var(--color-medio),
+        var(--color-principal)
+    );
+    color: white;
+}
+
+.btn-animapp-dark {
+    background: linear-gradient(
+        135deg,
+        var(--color-dark-medio),
+        var(--color-dark)
+    );
+    color: white;
+}
+
+.btn-animapp-warning {
+    background: linear-gradient(135deg, #ffd54f, #ffc107, #e0a800);
+    color: #2c2c2c;
+}
+
+.btn-animapp-primary {
+    background: linear-gradient(135deg, #4da3ff, #0d6efd, #0b5ed7);
+    color: white;
+}
+
+.btn-animapp-secondary {
+    background: linear-gradient(135deg, #adb5bd, #6c757d);
+    color: white;
+}

@@ -14,6 +14,7 @@ $login = $_GET['login'] ?? null;
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/css/01_style.css">
+    <link rel="stylesheet" href="./assets/css/04_modales.css">
 </head>
 
 <body class="d-flex flex-column min-vh-100">
@@ -27,8 +28,8 @@ $login = $_GET['login'] ?? null;
         <div class="container-fluid container-inicio">
             <div class="row d-flex justify-content-center align-items-end h-100">
                 <div class="col-xl-6 col-lg-8 col-md-10 col-sm-12 text-white text-center p-4 mb-3 rounded-2 inicio-cont-mensaje">
-                    <h1>Adopta con amor. Vive con proposito</h1>
-                    <p>En <strong>AnimApp</strong>, cada patita tiene una historia que esperea ser parte de la tuya</p>
+                    <h1>Adopta con amor. Vive con propósito</h1>
+                    <p>En <strong>AnimApp</strong>, cada patita tiene una historia que espera ser parte de la tuya</p>
                 </div>
             </div>
         </div>
@@ -39,7 +40,7 @@ $login = $_GET['login'] ?? null;
             <div class="row ">
                 <div class="col-xl-3 col-lg-4 col-md-6 mb-sm-4 row-card-div">
                     <div class="card card-servicio h-100">
-                        <img class="card-img-top" src="/assets/images/perroComida.jpg" alt="">
+                        <img class="card-img-top" src="/assets/images/perroComida.jpg" alt="Imagen servicio de tiendas">
                         <div class="card-body d-flex flex-column">
                             <h4 class="card-title">TIENDAS</h4>
                             <h5 class="card-subtitle text-muted mb-2">Subtitulo</h5>
@@ -50,7 +51,7 @@ $login = $_GET['login'] ?? null;
                 </div>
                 <div class="col-xl-3 col-lg-4 col-md-6 mb-sm-4 row-card-div">
                     <div class="card card-servicio h-100">
-                        <img class="card-img-top" src="/assets/images/paseador.jpg" alt="">
+                        <img class="card-img-top" src="/assets/images/paseador.jpg" alt="Imagen de un paseador de mascotas">
                         <div class="card-body d-flex flex-column">
                             <h4 class="card-title">PASEADORES</h4>
                             <h5 class="card-subtitle text-muted mb-2">Subtitulo</h5>
@@ -61,7 +62,7 @@ $login = $_GET['login'] ?? null;
                 </div>
                 <div class="col-xl-3 col-lg-4 col-md-6 mb-sm-4 row-card-div">
                     <div class="card card-servicio h-100">
-                        <img class="card-img-top" src="/assets/images/veterinaria1.jpg" alt="">
+                        <img class="card-img-top" src="/assets/images/veterinaria1.jpg" alt="Imagen de una veterinaria">
                         <div class="card-body d-flex flex-column">
                             <h4 class="card-title">VETERINARIAS</h4>
                             <h5 class="card-subtitle text-muted mb-2">Subtitulo</h5>
@@ -72,7 +73,7 @@ $login = $_GET['login'] ?? null;
                 </div>
                 <div class="col-xl-3 col-lg-4 col-md-6 mb-sm-4 row-card-div">
                     <div class="card card-servicio h-100">
-                        <img class="card-img-top" src="/assets/images/perroComida.jpg" alt="">
+                        <img class="card-img-top" src="/assets/images/perroComida.jpg" alt="Imagen de un refugio de animales">
                         <div class="card-body d-flex flex-column">
                             <h4 class="card-title">REFUGIO</h4>
                             <h5 class="card-subtitle text-muted mb-2">Subtitulo</h5>
@@ -89,7 +90,7 @@ $login = $_GET['login'] ?? null;
             <div class="row row-adoptar d-flex justify-content-end h-100">
                 <div class="col-xl-5 col-lg-6 col-md-8 col-sm-10 text-white text-center h-100 d-flex flex-column justify-content-center">
                     <h3 class="fw-bold fs-2">Adopta amor, cambia dos vidas</h3>
-                    <p class="py-4">Cada mascota merece un hogar lleno de cariño. En animapp puedes encontrar a tu compañero ideal y darle una segunda oportunidad. Explora perfiles, conoce sus historias y da el primer paso hacia una vida compartida.</p>
+                    <p class="py-4">Cada mascota merece un hogar lleno de cariño. En AnimApp puedes encontrar a tu compañero ideal y darle una segunda oportunidad. Explora perfiles, conoce sus historias y da el primer paso hacia una vida compartida.</p>
                     <a class="btn-adoptar btn btn-dark w-50" href="/views/home/adopciones.php">Más Información <i class="bi bi-hand-thumbs-up"></i></a>
                 </div>
             </div>
@@ -125,7 +126,7 @@ $login = $_GET['login'] ?? null;
         <div class="container-contato container-fluid">
             <div class="row row-contacto h-100">
                 <div class="div-form col-xl-5 col-lg-6 col-md-8 col-sm-10 text-white text-center h-100 d-flex flex-column justify-content-center">
-                    <h3>Tienes dudas o sugerencias escríbemos</h3>
+                    <h3>Tienes dudas o sugerencias escríbenos</h3>
                     <form>
                         <div class="col-10 mb-3 m-auto">
                             <label for="nombre" class="form-label">Nombre</label>
@@ -137,16 +138,16 @@ $login = $_GET['login'] ?? null;
                         </div>
                         <div class="col-10 mb-3 m-auto">
                             <label for="mensaje" class="form-label">Mensaje</label>
-                            <textarea name="mensaje" id="mensaja" class="form-control" placeholder="Mensaje"></textarea>
+                            <textarea name="mensaje" id="mensaje" class="form-control" placeholder="Mensaje"></textarea>
                         </div>
                         <div class="col-12 d-flex justify-content-center">
                             <div>
                                 <div class="form-check mb-3">
-                                    <input type="checkbox" name="termino" id="terminos" class="fomr-check-input">
+                                    <input type="checkbox" name="termino" id="terminos" class="form-check-input">
                                     <label for="terminos" class="form-check-label">Acepto los terminos y
                                         condiciones</label>
                                 </div>
-                                <button type="button" class="btn btn-dark w-100">ENVIAR<button>
+                                <button type="button" class="btn btn-dark w-100">ENVIAR</button>
                             </div>
                         </div>
                     </form>
@@ -160,7 +161,7 @@ $login = $_GET['login'] ?? null;
     <footer class="mt-auto">
         <?php require_once __DIR__ . '/views/layout/footer.php'; ?>
     </footer>
-
+    <?php require_once __DIR__ . '/views/layout/scripts.php'; ?>
     <?php if ($registro === 'ok'): ?>
         <script>
             mostrarModalExito();
@@ -168,12 +169,10 @@ $login = $_GET['login'] ?? null;
     <?php elseif ($registro === 'error'): ?>
         <script>
             mostrarModalError();
-            console.log("Error archivo index");
         </script>
     <?php elseif ($registro === 'okMascota'): ?>
         <script>
             mostrarModalMascota();
-            console.log("modal mostrar mascotas")
         </script>
     <?php endif; ?>
     <?php if ($login === 'ok'): ?>
